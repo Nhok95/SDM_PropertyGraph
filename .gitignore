@@ -4,6 +4,9 @@
 #Python
 __pycache__/
 
+source/
+cleaned/
+
 .tmp
 *.tmp
 *.tmp.*
