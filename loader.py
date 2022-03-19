@@ -24,6 +24,21 @@ class Neo4JLoader:
         
         print("Authors inserted")
         
+    def load_journals_articles(self):
+        print("Inserting journals and articles...")
+        with self.driver.session() as session:
+            session.run("""
+                LOAD CSV WITH HEADERS FROM 'file:///journals_extracted.csv' AS row
+                FIELDTERMINATOR ';'
+                WITH row WHERE row.ID IS NOT NULL
+                MERGE (j:Journal { journalID: row.key, title: row.journal})
+                MERGE (p:Paper { paperID: row.ID, title: row.title, abstract: row.abstract})
+                MERGE (y:Year { value: toString(row.year)})
+                MERGE (j)-[v:VOLUME]->(p)
+                SET v.vol=row.volume
+                MERGE (j)-[:PUBLISHED_IN]-(y)
+                """)
+        print("Journals and articles inserted")
 
     def clean_all(self):
         print("Cleaning database...")
