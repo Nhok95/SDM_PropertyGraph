@@ -30,13 +30,17 @@ class Neo4JLoader:
             session.run("""
                 LOAD CSV WITH HEADERS FROM 'file:///journals_extracted.csv' AS row
                 FIELDTERMINATOR ';'
-                WITH row WHERE row.ID IS NOT NULL
-                MERGE (j:Journal { journalID: row.key, title: row.journal})
-                MERGE (p:Paper { paperID: row.ID, title: row.title, abstract: row.abstract})
+                WITH row WHERE row.key IS NOT NULL AND row.title IS NOT NULL
+                MERGE (j:Journal { title: row.journal, year: row.year})
+                MERGE (p:Paper { paperID: row.key, title: row.title, abstract: row.abstract})
                 MERGE (y:Year { value: toString(row.year)})
                 MERGE (j)-[v:VOLUME]->(p)
                 SET v.vol=row.volume
-                MERGE (j)-[:PUBLISHED_IN]-(y)
+                MERGE (j)-[:PUBLISHED]-(y)
+                WITH row, p
+                UNWIND split(row.keywords, '|') AS keyword
+                MERGE (k:Keyword { topic: keyword})
+                MERGE (p)-[:TOPIC]-(k)
                 """)
         print("Journals and articles inserted")
 
@@ -44,7 +48,13 @@ class Neo4JLoader:
         print("Cleaning database...")
         with self.driver.session() as session:
             session.run("""
+                MATCH (n)-[r]-() DELETE n,r
+                """)
+
+        with self.driver.session() as session:
+            session.run("""
                 MATCH (n) DELETE n
                 """)
         
         print("Database cleaned")
+
