@@ -92,11 +92,11 @@ class Neo4JLoader:
                 WITH row WHERE row.key IS NOT NULL AND row.title IS NOT NULL
                 MERGE (p:Paper { paperID: row.key, title: row.title, abstract: row.abstract})
                 WITH row, p, SPLIT(row.author, '|') AS author 
-                MERGE (a:Author { name: author[0]})
-                MERGE (p)-[:AUTHOR]->(a) 
+                MERGE (s:Scientist { name: author[0]})
+                MERGE (p)-[:AUTHOR]->(s) 
                 WITH row, p, SPLIT(row.author, '|') AS author 
                 UNWIND RANGE(1,SIZE(author)-1) as i
-                MERGE (p)-[:COAUTHOR]->(a:Author { name: author[i]})
+                MERGE (p)-[:COAUTHOR]->(s:Scientist { name: author[i]})
                 """)
         
             if self.printResult(result):

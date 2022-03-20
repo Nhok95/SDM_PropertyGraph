@@ -1,0 +1,2701 @@
+name;type
+ICBC;company
+JPMorgan Chase;company
+Berkshire Hathaway;company
+China Construction Bank;company
+Saudi Arabian Oil Company (Saudi Aramco);company
+Apple;company
+Bank of America;company
+Ping An Insurance Group;company
+Agricultural Bank of China;company
+Amazon;company
+Samsung Electronics;company
+Toyota Motor;company
+Alphabet;company
+Bank of China;company
+Microsoft;company
+Citigroup;company
+Volkswagen Group;company
+Walmart;company
+Wells Fargo;company
+Verizon Communications;company
+UnitedHealth Group;company
+China Merchants Bank;company
+Alibaba Group;company
+Allianz;company
+Comcast;company
+Goldman Sachs Group;company
+Softbank;company
+Postal Savings Bank Of China (PSBC);company
+Tencent Holdings;company
+BNP Paribas;company
+Morgan Stanley;company
+China Mobile;company
+Facebook;company
+Johnson & Johnson;company
+Sony;company
+Intel;company
+CVS Health;company
+RBC;company
+Nestl�;company
+HSBC Holdings;company
+Daimler;company
+TD Bank Group;company
+Nippon Telegraph & Tel;company
+Deutsche Telekom;company
+General Electric;company
+Procter & Gamble;company
+General Motors;company
+Sinopec;company
+China Life Insurance;company
+Industrial Bank;company
+Sberbank;company
+Mitsubishi UFJ Financial;company
+Cigna;company
+AXA Group;company
+AIA Group;company
+Reliance Industries;company
+Bank of Communications;company
+Pfizer;company
+IBM;company
+Roche Holding;company
+BMW Group;company
+MetLife;company
+PetroChina;company
+LVMH Mo�t Hennessy Louis Vuitton;company
+Novartis;company
+Taiwan Semiconductor;company
+Home Depot;company
+Shanghai Pudong Development;company
+Siemens;company
+PepsiCo;company
+Oracle;company
+Sanofi;company
+Enel;company
+AbbVie;company
+Cisco Systems;company
+Zurich Insurance Group;company
+Bank of Nova Scotia;company
+Commonwealth Bank;company
+BHP Group;company
+UBS;company
+British American Tobacco;company
+Honda Motor;company
+Intesa Sanpaolo;company
+Merck & Co.;company
+Sumitomo Mitsui Financial;company
+Rio Tinto;company
+Japan Post Holdings;company
+US Bancorp;company
+Anthem;company
+Charter Communications;company
+Unilever;company
+Dell Technologies;company
+Manulife;company
+Hon Hai Precision;company
+American Express;company
+China Vanke;company
+GlaxoSmithKline;company
+Truist Financial;company
+Rosneft;company
+China State Construction Engineering;company
+JD.com;company
+Coca-Cola;company
+Iberdrola;company
+CITIC;company
+Prudential;company
+KDDI;company
+Bank of Montreal;company
+Costco Wholesale;company
+Ita� Unibanco Holding;company
+State Bank of India;company
+Chubb;company
+Mitsubishi;company
+Vale;company
+Capital One;company
+PNC Financial Services;company
+HDFC Bank;company
+Credit Agricole;company
+Itochu;company
+FedEx;company
+Vodafone;company
+Abbott Laboratories;company
+Visa;company
+SAP;company
+Thermo Fisher Scientific;company
+China Pacific Insurance;company
+Lowe's;company
+BlackRock;company
+China Citic Bank;company
+Mizuho Financial;company
+Deutsche Post;company
+Medtronic;company
+Caterpillar;company
+Hitachi;company
+Lockheed Martin;company
+Generali Group;company
+Target;company
+Deere & Company;company
+Honeywell International;company
+SAIC Motor;company
+Country Garden Holdings;company
+ANZ;company
+Charles Schwab;company
+Barclays;company
+Broadcom;company
+Munich Re;company
+Enbridge;company
+ING Group;company
+China Minsheng Bank;company
+Linde;company
+Amgen;company
+Allstate;company
+PayPal;company
+Orange;company
+Banco Bradesco;company
+Hyundai Motor;company
+Danaher;company
+Westpac Banking Group;company
+L'Or�al;company
+Petrobras;company
+NextEra Energy;company
+AstraZeneca;company
+China Everbright Bank;company
+Salesforce.com;company
+Oversea-Chinese Banking;company
+Aviva;company
+United Parcel Service;company
+Progressive;company
+NAB - National Australia Bank;company
+Accenture;company
+Southern Company;company
+Canadian Imperial Bank;company
+China Shenhua Energy;company
+SK Hynix;company
+Philip Morris International;company
+VINCI;company
+Mondelez International;company
+Lloyds Banking Group;company
+Mitsui;company
+Union Pacific;company
+3M;company
+CK Hutchison;company
+ICICI Bank;company
+Midea Group;company
+Exelon;company
+Credit Suisse Group;company
+Eli Lilly;company
+CNOOC;company
+Legal & General Group;company
+Aflac;company
+China Resources Land;company
+BBVA-Banco Bilbao Vizcaya;company
+HCA Healthcare;company
+Duke Energy;company
+Am�rica M�vil;company
+Takeda Pharmaceutical;company
+DBS;company
+Bank of New York Mellon;company
+Longfor Group Holdings;company
+Schneider Electric;company
+Travelers;company
+McDonald's;company
+Poly Developments & Holdings Group;company
+Tokio Marine Holdings;company
+China Telecom;company
+Nike;company
+Qualcomm;company
+Centene;company
+Micron Technology;company
+Cathay Financial;company
+EDF;company
+Fubon Financial;company
+Sun Life Financial;company
+General Dynamics;company
+M�ller-Maersk;company
+Volvo Group;company
+Altria Group;company
+Humana;company
+Anglo American;company
+Netflix;company
+HDFC;company
+Qatar National Bank;company
+Xiaomi;company
+Air Liquide;company
+Nordea Bank;company
+Northrop Grumman;company
+ABB;company
+China Evergrande Group;company
+Seven & I Holdings;company
+KB Financial Group;company
+Sunac China Holdings;company
+Kroger;company
+EMD Group;company
+E.ON;company
+PTT;company
+Telef�nica;company
+National Grid;company
+HP;company
+Danone;company
+Panasonic;company
+Power Corp of Canada;company
+Mastercard;company
+Baidu;company
+PICC;company
+Fortum;company
+Fresenius;company
+Dow;company
+Archer Daniels Midland;company
+Shinhan Financial Group;company
+ASML Holding;company
+American Electric;company
+Becton Dickinson;company
+Gree Electric Appliances;company
+LafargeHolcim;company
+China Railway Group;company
+Automatic Data Processing;company
+NVIDIA;company
+KBC Group;company
+Royal Ahold Delhaize N.V.;company
+Sun Hung Kai Properties;company
+Novo Nordisk;company
+Investor AB;company
+Tesla;company
+Huaxia Bank;company
+Kweichow Moutai;company
+Citic Securities;company
+KIA;company
+Japan Tobacco;company
+Dollar General;company
+Posco;company
+State Street;company
+Tesco;company
+Banco do Brasil;company
+Baoshan Iron & Steel;company
+Orix;company
+Fiserv;company
+China Unicom;company
+Wilmar International;company
+Sempra Energy;company
+LG Electronics;company
+NN Group;company
+Mitsubishi Electric;company
+Kering;company
+Diageo;company
+Reckitt Benckiser Group;company
+Bank of Beijing;company
+Poste Italiane;company
+ViacomCBS;company
+Nomura;company
+BT Group;company
+Henkel;company
+Dai-ichi Life Insurance;company
+Korea Electric Power;company
+Ericsson;company
+United Overseas Bank;company
+TC Energy;company
+Bank Of Shanghai;company
+Adobe;company
+Fannie Mae;company
+CNP Assurances;company
+Inditex;company
+Applied Materials;company
+BCE;company
+Couche Tard;company
+Saudi Telecom;company
+Bank of Ningbo;company
+CaixaBank;company
+Macquarie Group;company
+IntercontinentalExchange;company
+Surgutneftegas;company
+Deutsche Bank;company
+AT&T;company
+Tyson Foods;company
+Marsh & McLennan;company
+Ameriprise Financial;company
+First Abu Dhabi Bank;company
+Hartford Financial Services;company
+ExxonMobil;company
+Freddie Mac;company
+Vivendi;company
+The Saudi National Bank;company
+CRH;company
+Tata Consultancy Services;company
+Philips;company
+Royal Dutch Shell;company
+Stryker;company
+Etisalat;company
+Mitsui Fudosan;company
+Daiwa House Industry;company
+Shin-Etsu Chemical;company
+Daikin Industries;company
+CSX;company
+Lennar;company
+LyondellBasell Industries;company
+Swiss Life Holding;company
+Chevron;company
+General Mills;company
+Newmont Mining;company
+Barrick Gold;company
+China Railway Construction;company
+Haier Smart Home;company
+Anhui Conch Cement;company
+Discover Financial Services;company
+Texas Instruments;company
+DNB;company
+Total;company
+Nintendo;company
+Fortescue Metals Group;company
+China Yangtze Power;company
+Cardinal Health;company
+Canadian National Railway;company
+BP;company
+Walt Disney;company
+Hyundai Mobis;company
+Eaton;company
+Principal Financial Group;company
+New China Life Insurance;company
+Johnson Controls International;company
+Woolworths;company
+RWE Group;company
+Bank Of Jiangsu;company
+Santander;company
+Bank Rakyat Indonesia (BRI);company
+Fujitsu;company
+Maybank;company
+Toyota Industries;company
+Larsen & Toubro;company
+Gazprom;company
+Norfolk Southern;company
+Synchrony Financial;company
+Keurig Dr Pepper;company
+L3Harris Technologies;company
+Greenland Holdings Group;company
+BAE Systems;company
+Waste Management;company
+Brookfield Asset Management;company
+Xcel Energy;company
+Anheuser-Busch InBev;company
+Raytheon Technologies;company
+Emerson Electric;company
+Al Rajhi Bank;company
+Boeing;company
+Sherwin-Williams;company
+VMware;company
+Ally Financial;company
+China Merchants Shekou Industrial Zone Holdings;company
+Imperial Brands;company
+American Tower;company
+Norilsk Nickel;company
+China National Building;company
+Samsung Life Insurance;company
+Emirates NBD;company
+Ford Motor;company
+Starbucks;company
+China Communications Construction;company
+CTBC Financial;company
+AIRBUS;company
+Telecom Italia;company
+Zijin Mining Group;company
+National Bank of Canada;company
+SEB AB;company
+Sompo;company
+Aon;company
+Weichai Power;company
+Carrier Global;company
+Saint-Gobain;company
+Murata Manufacturing;company
+Hengli Petrochemical;company
+Recruit Holdings;company
+Cosco Shipping;company
+Bristol Myers Squibb;company
+Danske Bank;company
+Cummins;company
+OMV Group;company
+Saudi Electricity;company
+Glencore International;company
+D.R. Horton;company
+Best Buy;company
+Prudential Financial;company
+Stellantis;company
+Suzuki Motor;company
+BASF;company
+Canon;company
+Fast Retailing;company
+Fifth Third Bank;company
+CME Group;company
+EnBW-Energie Baden;company
+Samsung C&T;company
+CRRC;company
+Bayer;company
+Toyota Tsusho;company
+Public Service Enterprise Group;company
+Phoenix Group Holdings;company
+Consolidated Edison;company
+Kimberly-Clark;company
+Wesfarmers;company
+Bank Central Asia;company
+Kraft Heinz Company;company
+Paccar;company
+American International Group;company
+Mitsubishi Estate;company
+Equinor;company
+DTE Energy;company
+Lenovo Group;company
+Fujifilm Holdings;company
+Colgate-Palmolive;company
+Hana Financial Group;company
+Kotak Mahindra Bank;company
+Telstra;company
+Biogen;company
+Talanx;company
+Carrefour;company
+Standard Chartered;company
+Svenska Handelsbanken;company
+Sumitomo Mitsui Trust;company
+DISH Network;company
+Meituan;company
+Walgreens;company
+BYD;company
+Fosun International;company
+ENGIE;company
+Eni;company
+Kubota;company
+Shimao Property Holdings;company
+CK Asset Holdings;company
+Bank of Nanjing;company
+Edp-energias De Portugal;company
+LukOil;company
+Sany Heavy Industry;company
+Grupo Mexico;company
+Michelin Group;company
+Komatsu;company
+NetEase;company
+Asahi Group Holdings;company
+SK Telecom;company
+Air Products & Chemicals;company
+Athene Holding;company
+eBay;company
+Freeport-McMoRan;company
+Power Construction Corporation of China;company
+LG Chem;company
+Saudi Basic Industries;company
+Bouygues;company
+Citizens Bank (Rhode IsIand);company
+Capgemini;company
+Edison International;company
+Magna International;company
+Dollar Tree;company
+Telenor;company
+China Zheshang Bank;company
+Entergy;company
+Lam Research;company
+Infosys;company
+The Est�e Lauder Companies;company
+China Tower Corp.;company
+Corteva;company
+CSL;company
+Safran;company
+Banorte;company
+KeyCorp;company
+Lufax Holding;company
+Harvard University;university
+Massachusetts Institute of Technology;university
+Stanford University;university
+University of Cambridge;university
+California Institute of Technology;university
+Princeton University;university
+University of Oxford;university
+Yale University;university
+Columbia University;university
+University of California, Berkeley;university
+University of Chicago;university
+Cornell University;university
+University of Pennsylvania;university
+University of Tokyo;university
+Johns Hopkins University;university
+Swiss Federal Institute of Technology in Zurich;university
+Kyoto University;university
+Weizmann Institute of Science;university
+University of California, Los Angeles;university
+University of California, San Diego;university
+Rockefeller University;university
+Hebrew University of Jerusalem;university
+New York University;university
+University of California, San Francisco;university
+University of Wisconsin–Madison;university
+University of Illinois at Urbana–Champaign;university
+Duke University;university
+Imperial College London;university
+University of Texas Southwestern Medical Center;university
+University of Texas at Austin;university
+University College London;university
+Osaka University;university
+Northwestern University;university
+University of Michigan, Ann Arbor;university
+University of Toronto;university
+University of North Carolina at Chapel Hill;university
+Washington University in St. Louis;university
+University of Utah;university
+University of Washington - Seattle;university
+University of California, Santa Barbara;university
+McGill University;university
+Purdue University, West Lafayette;university
+Carnegie Mellon University;university
+University of Southern California;university
+University of California, Davis;university
+University of Colorado Boulder;university
+University of California, Irvine;university
+University of Paris-Sud;university
+University of Minnesota, Twin Cities;university
+University of Arizona;university
+Technion – Israel Institute of Technology;university
+Ohio State University, Columbus;university
+University of Rochester;university
+École normale supérieure - Paris;university
+University of Florida;university
+Tel Aviv University;university
+Rice University;university
+Dartmouth College;university
+Vanderbilt University;university
+University of Edinburgh;university
+École Polytechnique;university
+Boston University;university
+Pierre-and-Marie-Curie University;university
+Pennsylvania State University, University Park;university
+University of Geneva;university
+Brown University;university
+University of British Columbia;university
+University of Maryland, College Park;university
+Swiss Federal Institute of Technology in Lausanne;university
+Karolinska Institute;university
+University of Pittsburgh - Pittsburgh Campus;university
+Rutgers University-New Brunswick;university
+Texas A&M University, College Station;university
+Nagoya University;university
+Seoul National University;university
+University of Manchester;university
+Sapienza University of Rome;university
+Case Western Reserve University;university
+Tohoku University;university
+Arizona State University;university
+Emory University;university
+Ruprecht Karl University of Heidelberg;university
+Ludwig Maximilian University of Munich;university
+University of Virginia;university
+Leiden University;university
+Tufts University;university
+Georgia Institute of Technology;university
+University of Zurich;university
+University of Helsinki;university
+Technical University of Munich;university
+University of Oslo;university
+University of Queensland;university
+University of Copenhagen;university
+University of Sydney;university
+Williams College;university
+University of Texas MD Anderson Cancer Center;university
+University of Nottingham;university
+University of Bristol;university
+Utrecht University;university
+Mines ParisTech;university
+Harvard University;university
+Stanford University;university
+University of Oxford;university
+Massachusetts Institute of Technology;university
+University of Cambridge;university
+Columbia University;university
+University of California, Berkeley;university
+Princeton University;university
+University of Chicago;university
+Yale University;university
+California Institute of Technology;university
+University of Pennsylvania;university
+Cornell University;university
+University of Tokyo;university
+Kyoto University;university
+University of California, Los Angeles;university
+Johns Hopkins University;university
+Swiss Federal Institute of Technology in Zurich;university
+New York University;university
+University of California, San Diego;university
+Hebrew University of Jerusalem;university
+University of California, San Francisco;university
+University of Wisconsin–Madison;university
+University of Illinois at Urbana–Champaign;university
+Duke University;university
+University of Texas at Austin;university
+Imperial College London;university
+Northwestern University;university
+University of Toronto;university
+University College London;university
+University of Washington - Seattle;university
+University of Michigan, Ann Arbor;university
+Weizmann Institute of Science;university
+University of North Carolina at Chapel Hill;university
+Osaka University;university
+University of Paris-Sud;university
+University of California, Santa Barbara;university
+Purdue University, West Lafayette;university
+University of Southern California;university
+Seoul National University;university
+University of Colorado Boulder;university
+University of Utah;university
+Rutgers University-New Brunswick;university
+University of Minnesota, Twin Cities;university
+University of Edinburgh;university
+University of Texas Southwestern Medical Center;university
+McGill University;university
+Pierre-and-Marie-Curie University;university
+Rockefeller University;university
+Pennsylvania State University, University Park;university
+Carnegie Mellon University;university
+Ohio State University, Columbus;university
+University of California, Davis;university
+Boston University;university
+University of Florida;university
+University of Geneva;university
+Tel Aviv University;university
+University of British Columbia;university
+University of Maryland, College Park;university
+Karolinska Institute;university
+Vanderbilt University;university
+Sapienza University of Rome;university
+Washington University in St. Louis;university
+École normale supérieure - Paris;university
+University of California, Irvine;university
+Technion – Israel Institute of Technology;university
+Ludwig Maximilian University of Munich;university
+University of Copenhagen;university
+University of Pittsburgh - Pittsburgh Campus;university
+Keio University;university
+University of Virginia;university
+University of Manchester;university
+Arizona State University;university
+University of Zurich;university
+King's College London;university
+University of Rochester;university
+Brown University;university
+University of Arizona;university
+Ruprecht Karl University of Heidelberg;university
+Texas A&M University, College Station;university
+University of Oslo;university
+Dartmouth College;university
+Swiss Federal Institute of Technology in Lausanne;university
+Utrecht University;university
+Indiana University - Bloomington;university
+École Polytechnique;university
+National University of Singapore;university
+University of Texas MD Anderson Cancer Center;university
+Stony Brook University;university
+Lomonosov Moscow State University;university
+Nagoya University;university
+University of Sydney;university
+Emory University;university
+Rice University;university
+Tohoku University;university
+Australian National University;university
+University of Alberta;university
+University of Helsinki;university
+Paris Diderot University - Paris 7;university
+Georgia Institute of Technology;university
+Harvard University;university
+Stanford University;university
+Massachusetts Institute of Technology;university
+University of Cambridge;university
+University of Oxford;university
+Columbia University;university
+University of California, Berkeley;university
+University of Chicago;university
+Princeton University;university
+Yale University;university
+Cornell University;university
+California Institute of Technology;university
+University of Tokyo;university
+University of Pennsylvania;university
+University of California, Los Angeles;university
+Kyoto University;university
+New York University;university
+Swiss Federal Institute of Technology in Zurich;university
+Johns Hopkins University;university
+University of California, San Diego;university
+University of Michigan, Ann Arbor;university
+Hebrew University of Jerusalem;university
+Northwestern University;university
+Seoul National University;university
+University of Wisconsin–Madison;university
+Duke University;university
+University of California, San Francisco;university
+University of Illinois at Urbana–Champaign;university
+University of Texas at Austin;university
+University College London;university
+University of Toronto;university
+University of Washington - Seattle;university
+Rutgers University-New Brunswick;university
+Keio University;university
+École normale supérieure - Paris;university
+École Polytechnique;university
+Rockefeller University;university
+Weizmann Institute of Science;university
+Imperial College London;university
+Waseda University;university
+University of Virginia;university
+McGill University;university
+Osaka University;university
+Dartmouth College;university
+University of North Carolina at Chapel Hill;university
+Pennsylvania State University, University Park;university
+Ohio State University, Columbus;university
+Lomonosov Moscow State University;university
+University of Minnesota, Twin Cities;university
+University of Paris-Sud;university
+University of Southern California;university
+Purdue University, West Lafayette;university
+University of Pittsburgh - Pittsburgh Campus;university
+Carnegie Mellon University;university
+Peking University;university
+University of Edinburgh;university
+University of California, Davis;university
+Washington University in St. Louis;university
+University of Florida;university
+University of California, Santa Barbara;university
+University of British Columbia;university
+University of Utah;university
+University of Colorado Boulder;university
+University of Notre Dame;university
+National Taiwan University;university
+University of Texas Southwestern Medical Center;university
+Boston University;university
+Pierre-and-Marie-Curie University;university
+University of Manchester;university
+University of Arizona;university
+Vanderbilt University;university
+Tohoku University;university
+Karolinska Institute;university
+National University of Singapore;university
+University of Geneva;university
+University of Maryland, College Park;university
+University of Rochester;university
+Emory University;university
+University of Copenhagen;university
+University of California, Irvine;university
+Brown University;university
+Ludwig Maximilian University of Munich;university
+Georgia Institute of Technology;university
+Tufts University;university
+University of Zurich;university
+Tel Aviv University;university
+Tsinghua University;university
+Utrecht University;university
+Ruprecht Karl University of Heidelberg;university
+King's College London;university
+Sapienza University of Rome;university
+Kyushu University;university
+Swiss Federal Institute of Technology in Lausanne;university
+Katholieke Universiteit Leuven;university
+University of Sydney;university
+Tokyo Institute of Technology;university
+University of Melbourne;university
+University of Bonn;university
+Technical University of Munich;university
+Royal Institute of Technology;university
+Erasmus University Rotterdam;university
+Case Western Reserve University;university
+University of Alberta;university
+University of Texas MD Anderson Cancer Center;university
+Texas A&M University, College Station;university
+Arizona State University;university
+Yonsei University;university
+Rice University;university
+Technion – Israel Institute of Technology;university
+University of Helsinki;university
+University of Oslo;university
+Michigan State University;university
+Indiana University - Bloomington;university
+University of the Witwatersrand;university
+University of Queensland;university
+Lund University;university
+Leiden University;university
+Georgetown University;university
+Aarhus University;university
+University of Barcelona;university
+Baylor College of Medicine;university
+University of Amsterdam;university
+University of Bristol;university
+Uppsala University;university
+University of Iowa;university
+Stony Brook University;university
+University of Groningen;university
+Korea Advanced Institute of Science and Technology (KAIST);university
+Radboud University Nijmegen;university
+Korea University;university
+University of São Paulo;university
+Nagoya University;university
+University of Colorado Denver;university
+University of Montreal;university
+Albert Ludwig University of Freiburg;university
+Ghent University;university
+University of Glasgow;university
+University of Miami;university
+Université libre de Bruxelles;university
+Paris Diderot University - Paris 7;university
+McMaster University;university
+University of Birmingham;university
+University of Texas at Dallas;university
+VU University Amsterdam;university
+Wake Forest University;university
+University of Southampton;university
+University of Nottingham;university
+Nanyang Technological University;university
+University of New South Wales;university
+Osaka City University;university
+University of Leeds;university
+Western University (The University of Western Ontario);university
+Kobe University;university
+University of Basel;university
+University of Hong Kong;university
+Indiana University-Purdue University Indianapolis;university
+Humboldt University of Berlin;university
+Free University of Berlin;university
+University of Tübingen;university
+Australian National University;university
+Goethe University Frankfurt;university
+University of Houston;university
+University of California, Santa Cruz;university
+University of Alabama at Birmingham;university
+Icahn School of Medicine at Mount Sinai;university
+University of Calgary;university
+Mines ParisTech;university
+University of Gothenburg;university
+University of Göttingen;university
+Monash University;university
+Southern Methodist University;university
+Yeshiva University;university
+University of South Florida - Tampa;university
+Hanyang University;university
+Oregon Health & Science University;university
+University of Strasbourg;university
+University of Cincinnati;university
+University of Sheffield;university
+University of Hamburg;university
+George Washington University;university
+University of Milan;university
+Iowa State University;university
+University of Maryland, Baltimore;university
+University of Padua;university
+University of New Mexico;university
+Pohang University of Science and Technology;university
+Stockholm University;university
+Hokkaido University;university
+Fudan University;university
+University of Sussex;university
+Université catholique de Louvain;university
+Wayne State University;university
+University of Massachusetts Medical School;university
+University of Lausanne;university
+Shanghai Jiao Tong University;university
+University of Missouri–Columbia;university
+Technical University of Denmark;university
+Complutense University of Madrid;university
+University of Cologne;university
+Trinity College, Dublin;university
+University of Bern;university
+Chinese University of Hong Kong;university
+University of Kansas;university
+Sungkyunkwan University;university
+University of Vienna;university
+Zhejiang University;university
+University of Georgia;university
+University of Massachusetts Amherst;university
+Cardiff University;university
+University of Münster;university
+University of Liverpool;university
+University of Ottawa;university
+University of Erlangen-Nuremberg;university
+Queen Mary University of London;university
+Karlsruhe Institute of Technology;university
+Louisiana State University - Baton Rouge;university
+Nanjing University;university
+University of Illinois at Chicago;university
+University of Bologna;university
+University of Manitoba;university
+Joseph Fourier University;university
+University of California, Riverside;university
+Julius-Maximilian's University of Würzburg;university
+Aix-Marseille University;university
+University of Western Australia;university
+Laval University;university
+University of Tennessee, Knoxville;university
+North Carolina State University;university
+Newcastle University;university
+Claude Bernard University Lyon 1;university
+University of Turin;university
+University of Kiel;university
+University of Connecticut;university
+Tulane University;university
+University of Oklahoma - Norman Campus;university
+Brandeis University;university
+Dresden University of Technology;university
+RWTH Aachen University;university
+University of Texas Health Science Center at San Antonio;university
+Virginia Commonwealth University;university
+University of Montpellier 2;university
+Dalian University of Technology;university
+Rensselaer Polytechnic Institute;university
+Paul Sabatier University - Toulouse III;university
+Paris Descartes University;university
+National Cheng Kung University;university
+University of Delaware;university
+Vrije Universiteit Brussel;university
+Johannes Gutenberg University of Mainz;university
+Maastricht University;university
+University of Düsseldorf;university
+University of Dundee;university
+University of Tsukuba;university
+Autonomous University of Barcelona;university
+Florida State University;university
+University of Texas at San Antonio;university
+London School of Hygiene & Tropical Medicine;university
+Lehigh University;university
+University of Kentucky;university
+Thomas Jefferson University;university
+Drexel University;university
+Colorado State University - Fort Collins;university
+University of Leicester;university
+Durham University;university
+Oregon State University;university
+University of Florence;university
+University of Cape Town;university
+University at Buffalo, The State University of New York;university
+University College Dublin;university
+University of Science and Technology of China;university
+Virginia Polytechnic Institute and State University;university
+University of Naples Federico II;university
+University of Auckland;university
+University of Texas Health Science Center at Houston;university
+Delft University of Technology;university
+University of Aberdeen;university
+Queen's University;university
+University of Lisbon;university
+Hiroshima University;university
+University of Waterloo;university
+Okayama University;university
+University of Ulm;university
+Chulalongkorn University;university
+Dalhousie University;university
+Saint Petersburg State University;university
+Norwegian University of Science and Technology;university
+University of Reading;university
+Wageningen University and Research Centre;university
+Umeå University;university
+University of Porto;university
+Hong Kong University of Science and Technology;university
+Sun Yat-sen University;university
+Medical College of Wisconsin;university
+City College of New York;university
+Hannover Medical School;university
+Washington State University, Pullman;university
+Technical University of Berlin;university
+University of South Carolina - Columbia;university
+Leipzig University;university
+University of Stuttgart;university
+University of Valencia;university
+Linköping University;university
+University of Duisburg-Essen;university
+Ruhr University Bochum;university
+University of Bergen;university
+London School of Economics;university
+Wesleyan University;university
+University of Pisa;university
+Autonomous University of Madrid;university
+Medical University of Vienna;university
+Stellenbosch University;university
+Medical University of South Carolina;university
+Charles University in Prague;university
+Kyungpook National University;university
+University of Science, Malaysia;university
+University of Liège;university
+University of Hull;university
+Northeastern University;university
+Kansas State University;university
+University of Vermont;university
+Rush University;university
+University of Louisville;university
+University of St Andrews;university
+University of Warwick;university
+University of Rome Tor Vergata;university
+University of Innsbruck;university
+Darmstadt University of Technology;university
+Indian Institute of Technology Delhi;university
+Federal University of Rio de Janeiro;university
+University of Antwerp;university
+National and Kapodistrian University of Athens;university
+Boston College;university
+Vita-Salute San Raffaele University;university
+Gwangju Institute of Science and Technology;university
+University of Nebraska–Lincoln;university
+University of York;university
+National Autonomous University of Mexico;university
+University of Regensburg;university
+Yokohama National University;university
+University of Adelaide;university
+University of Genoa;university
+Queen's University Belfast;university
+University of Marburg;university
+University of Pavia;university
+St George's, University of London;university
+University of Oregon;university
+University of Navarra;university
+San Diego State University;university
+Nankai University;university
+University of East Anglia;university
+University of Nebraska Medical Center;university
+University of Southern Denmark;university
+Eindhoven University of Technology;university
+Xiamen University;university
+University of Otago;university
+University of Santiago de Compostela;university
+University of Exeter;university
+University of Jena;university
+University of Perugia;university
+Justus Liebig University Giessen;university
+College of William and Mary;university
+Ben-Gurion University of the Negev;university
+Saint Louis University;university
+Colorado School of Mines;university
+Oklahoma State University–Stillwater;university
+University of Guelph;university
+University of Trieste;university
+University of Verona;university
+University at Albany, SUNY;university
+Tongji University;university
+Eötvös Loránd University;university
+University of Alabama - Tuscaloosa;university
+University of Eastern Finland;university
+Ewha Womans University;university
+City University of Hong Kong;university
+Tokyo Medical and Dental University;university
+University of Victoria;university
+University of Buenos Aires;university
+University of Texas Medical Branch at Galveston;university
+Kyung Hee University;university
+Hong Kong Polytechnic University;university
+Saarland University;university
+Scuola Normale Superiore di Pisa;university
+University of Seville;university
+Beijing Normal University;university
+Chiba University;university
+University of Ferrara;university
+University of Bari Aldo Moro;university
+Polytechnic University of Milan;university
+Temple University;university
+University of Turku;university
+Aalto University;university
+Simon Fraser University;university
+Tianjin University;university
+Chalmers University of Technology;university
+Middle East Technical University;university
+Cranfield University;university
+York University;university
+Xi'an Jiaotong University;university
+Chonnam National University;university
+University of Central Florida;university
+University of Lorraine;university
+University of Bordeaux II;university
+University of New Hampshire;university
+Versailles Saint-Quentin-en-Yvelines University;university
+Chonbuk National University;university
+Kumamoto University;university
+Huazhong University of Science and Technology;university
+Brunel University;university
+Polytechnic University of Catalonia;university
+National Chiao Tung University;university
+Southeast University;university
+Tokyo University of Science;university
+Catholic University of the Sacred Heart;university
+Brigham Young University;university
+Technical University of Madrid;university
+Nagasaki University;university
+National Tsing Hua University;university
+University of Warsaw;university
+King Saud University;university
+University of Bath;university
+Concordia University;university
+Georgia Regents University;university
+Niigata University;university
+University of Oulu;university
+Pompeu Fabra University;university
+Vienna University of Technology;university
+Sogang University;university
+Gyeongsang National University;university
+University of Tampere;university
+University of Milan - Bicocca;university
+University of Bordeaux I;university
+Swedish University of Agricultural Sciences;university
+George Mason University;university
+Jilin University;university
+University of Delhi;university
+University of Campinas;university
+Wuhan University;university
+West Virginia University;university
+Pusan National University;university
+University of Mississippi - Oxford Campus;university
+University of Arkansas for Medical Sciences;university
+Miami University;university
+University of Tokushima;university
+University of Twente;university
+Loyola University Chicago;university
+Ajou University;university
+Syracuse University;university
+Lancaster University;university
+Pontifical Catholic University of Chile;university
+University of Chile;university
+Innsbruck Medical University;university
+University of Granada;university
+Kanazawa University;university
+University of Parma;university
+University of Siena;university
+Shandong University;university
+Technical University of Dortmund;university
+University of KwaZulu-Natal;university
+University of Nevada, Reno;university
+Yokohama City University;university
+École normale supérieure de Lyon;university
+University College Cork;university
+Ohio University;university
+Central South University;university
+University of Modena and Reggio Emilia;university
+New Mexico State University;university
+University of Konstanz;university
+University of Hawaii at Manoa;university
+University of Nebraska Omaha;university
+Shinshu University;university
+University of Strathclyde;university
+Baylor University;university
+Polytechnic University of Valencia;university
+Harbin Institute of Technology;university
+University of Rennes 1;university
+University of Arkansas - Fayetteville;university
+Aristotle University of Thessaloniki;university
+Jagiellonian University;university
+Texas Tech University (TTU);university
+University of Rostock;university
+University of Akron;university
+University of Saskatchewan;university
+Juntendo University;university
+University of Wyoming;university
+Macquarie University;university
+University of Canterbury;university
+University of Denver;university
+Illinois Institute of Technology;university
+Creighton University;university
+Bielefeld University;university
+University of Malaya;university
+University of Ulsan;university
+City University London;university
+Grenoble Institute of Technology;university
+Federal University of Minas Gerais;university
+University of Hanover;university
+South China University of Technology;university
+University of Surrey;university
+Otto-von-Guericke University Magdeburg;university
+Indian Institute of Science;university
+Tokyo Metropolitan University;university
+Bar-Ilan University;university
+Mississippi State University;university
+University of Maryland, Baltimore County;university
+University of Wollongong;university
+Flinders University;university
+Martin Luther University of Halle-Wittenberg;university
+Graduate University for Advanced Studies;university
+Clemson University;university
+University of Brescia;university
+Georgia State University;university
+Dongguk University;university
+University of Fribourg;university
+Sichuan University;university
+University of Iceland;university
+University of Sherbrooke;university
+University of Graz;university
+University of Málaga;university
+University of Zaragoza;university
+New York Medical College;university
+SUNY Downstate Medical Center;university
+École Centrale Paris;university
+Utah State University;university
+University of Ljubljana;university
+University of Montpellier 1;university
+Victoria University of Wellington;university
+East China University of Science and Technology;university
+Konkuk University;university
+University of Potsdam;university
+University of the Basque Country;university
+University of Nice Sophia Antipolis;university
+University of Udine;university
+National Yang-Ming University;university
+Indian Institute of Technology Bombay;university
+University of Bayreuth;university
+University of Wisconsin–Milwaukee;university
+University of Dayton;university
+Nihon University;university
+Montana State University - Bozeman;university
+Royal Holloway, University of London;university
+Tokyo Women's Medical University;university
+Panjab University;university
+Tampere University of Technology;university
+University of Coimbra;university
+University of Newcastle;university
+Nara Institute of Science and Technology;university
+Auburn University;university
+University of Bremen;university
+Mahidol University;university
+University of Crete;university
+Bangor University;university
+University of Aveiro;university
+University of Palermo;university
+Nagoya City University;university
+University of Tartu;university
+University of Savoy;university
+University of Tromsø - The Arctic University of Norway;university
+University of Missouri–Kansas City;university
+Beihang University;university
+American University of Beirut;university
+University of Nantes;university
+University of Essex;university
+University of Zagreb;university
+National Central University;university
+University Lille 1: Sciences and Technologies;university
+University of Catania;university
+National Polytechnic Institute of Toulouse;university
+Indian Institute of Technology Kanpur;university
+Kagoshima University;university
+Lanzhou University;university
+James Cook University;university
+Shizuoka University;university
+Indian Institute of Technology Kharagpur;university
+Second University of Naples;university
+Indian Institute of Technology Madras;university
+Plymouth University;university
+International School for Advanced Studies;university
+Polytechnic University of Turin;university
+University of Oviedo;university
+Ehime University;university
+University of Ioannina;university
+University of Cagliari;university
+Tottori University;university
+Federal University of Rio Grande do Sul;university
+Kent State University;university
+University of Los Andes (Colombia);university
+Hunan University;university
+Tokai University;university
+LSU Health Sciences Center New Orleans;university
+Southern Illinois University Carbondale;university
+Tata Institute of Fundamental Research;university
+Aalborg University;university
+Osaka Prefecture University;university
+Chang Gung University;university
+Northern Illinois University;university
+University of Trento;university
+Semmelweis University;university
+University of Science and Technology Beijing;university
+National University of Ireland, Galway;university
+Dankook University;university
+Istanbul University;university
+Tokyo University of Agriculture and Technology;university
+University of Montana - Missoula;university
+Queensland University of Technology;university
+Binghamton University;university
+Université de Namur;university
+University of Tasmania;university
+University of Pretoria;university
+Central China Normal University;university
+Indian Institute of Technology Roorkee;university
+Curtin University;university
+Deakin University;university
+Tilburg University;university
+Inha University;university
+University of New Orleans;university
+Paris-Est Créteil Val-de-Marne University;university
+University of L'Aquila;university
+Chungnam National University;university
+University of Salamanca;university
+University of Alaska Fairbanks;university
+University of Poitiers;university
+Albany Medical College;university
+Birkbeck, University of London;university
+Griffith University;university
+Federal University of São Paulo;university
+Carleton University;university
+Massey University;university
+Catholic University of Korea;university
+Open University (UK);university
+University of Patras;university
+Universidade Nova de Lisboa;university
+Texas A&M Health Science Center;university
+Braunschweig University of Technology;university
+National Chung Hsing University;university
+La Trobe University;university
+Missouri University of Science and Technology;university
+University of Idaho;university
+Louisiana Tech University;university
+University of Portsmouth;university
+University of La Laguna;university
+Florida International University;university
+Medical University of Graz;university
+Howard University;university
+University of Hertfordshire;university
+State University of New York Upstate Medical University;university
+Royal College of Surgeons in Ireland;university
+National Technical University of Athens;university
+University of Windsor;university
+Rovira i Virgili University;university
+University of Burgundy;university
+Gunma University;university
+AGH University of Science and Technology;university
+Gifu University;university
+Hacettepe University;university
+Örebro University;university
+Memorial University of Newfoundland;university
+Kindai University;university
+University of Rhode Island;university
+University of Alicante;university
+New Jersey Institute of Technology;university
+Lille 2 University of Health and Law;university
+Keele University;university
+University of Jyväskylä;university
+Rochester Institute of Technology;university
+Sapporo Medical University;university
+Banaras Hindu University;university
+King Abdullah University of Science and Technology;university
+Northeast Normal University;university
+Portland State University;university
+University of Québec at Montreal;university
+East China Normal University;university
+University of Debrecen;university
+Loma Linda University;university
+Old Dominion University;university
+University of Insubria;university
+University of Nevada, Las Vegas;university
+Hong Kong Baptist University;university
+University of Minho;university
+University of Messina;university
+University of Texas at Arlington;university
+University François Rabelais, Tours;university
+UNESP, São Paulo State University;university
+Toho University;university
+Beijing University of Chemical Technology;university
+Rutgers, The State University of New Jersey - Newark;university
+Johannes Kepler University of Linz;university
+Warsaw University of Technology;university
+University of Paris 13;university
+University of Toyama;university
+University of Toledo;university
+University of Vigo;university
+University of Kent;university
+Jichi Medical University;university
+Roma Tre University;university
+Chung Yuan Christian University;university
+University of Haifa;university
+Åbo Akademi University;university
+Swansea University;university
+China Agricultural University;university
+Marche Polytechnic University;university
+University of Maine, Orono;university
+Heriot-Watt University;university
+Marquette University;university
+Loughborough University;university
+Kaiserslautern University of Technology;university
+Aston University;university
+University of Girona;university
+Hasselt University;university
+Nanjing University of Science and Technology;university
+University of Natural Resources and Life Sciences, Vienna;university
+University of Szeged;university
+Soochow University (Suzhou);university
+University of the Balearic Islands;university
+Fuzhou University;university
+University of Memphis;university
+San Francisco State University;university
+East Carolina University;university
+University of Augsburg;university
+University of Missouri–St. Louis;university
+Kyoto Prefectural University of Medicine;university
+Shanghai University;university
+University of South Australia;university
+Liverpool John Moores University;university
+Graz University of Technology;university
+Kitasato University;university
+University of North Carolina at Charlotte;university
+G. d'Annunzio University, Chieti-Pescara;university
+University of Cantabria;university
+Miguel Hernández University of Elche;university
+Donghua University;university
+Comenius University in Bratislava;university
+University of Alabama in Huntsville;university
+Mie University;university
+University of Stirling;university
+Hunter College;university
+Swinburne University of Technology;university
+University of Ulster;university
+University of Évry Val d'Essonne;university
+University of Salerno;university
+National University of La Plata;university
+Masaryk University;university
+Yamaguchi University;university
+University of Yamanashi;university
+Showa University;university
+North Dakota State University - Main Campus;university
+University of North Texas, Denton;university
+University of Mississippi Medical Center;university
+University of Tehran;university
+Paul Valéry University, Montpellier III;university
+Wuhan University of Technology;university
+University of Hyogo;university
+The Catholic University of America;university
+University of Neuchâtel;university
+National Polytechnic Institute;university
+Jikei University School of Medicine;university
+University of Valladolid;university
+University of Calabria;university
+University of Lübeck;university
+Kurume University;university
+Peking Union Medical College;university
+Yamagata University;university
+University of Córdoba (Spain);university
+University of Mons;university
+Saga University;university
+Clarkson University;university
+University of South Alabama;university
+Inje University;university
+University of Caen Lower Normandy;university
+University of Castilla–La Mancha;university
+Czech Technical University in Prague;university
+Saitama Medical University;university
+Istanbul Technical University;university
+Kaohsiung Medical University;university
+University of Electro-Communications;university
+Yeungnam University;university
+Jawaharlal Nehru Centre for Advanced Scientific Research;university
+Putra University, Malaysia;university
+Institut national des sciences Appliquées de Lyon;university
+University of Perpignan Via Domitia;university
+University of Miyazaki;university
+Second Military Medical University;university
+Northern Arizona University;university
+École Polytechnique de Montréal;university
+University of Salento;university
+Fukuoka University;university
+Nagoya Institute of Technology;university
+Ankara University;university
+Blaise Pascal University;university
+University of Electronic Science and Technology of China;university
+National Sun Yat-sen University;university
+University of Rouen;university
+Bowling Green State University;university
+Norwegian University of Life Sciences;university
+University of Picardie Jules Verne;university
+Michigan Technological University;university
+University of Concepción;university
+China Medical University (Taiwan);university
+University of Hohenheim;university
+Aberystwyth University;university
+Wilfrid Laurier University;university
+Cairo University;university
+University of Murcia;university
+Palacký University, Olomouc;university
+Taipei Medical University;university
+University of Bradford;university
+King Fahd University of Petroleum and Minerals;university
+Ege University;university
+University of Belgrade;university
+"University of Eastern Piedmont ""Amedeo Avogadro"",Italy,43,355,478,210,835,675,609,716,637,44.51,2014
+811,""Budapest University of Technology and Economics";university
+University of Salzburg;university
+University of Massachusetts Lowell;university
+Jaume I University;university
+Chongqing University;university
+Beijing Institute of Technology;university
+Manchester Metropolitan University;university
+Zhengzhou University;university
+Dublin City University;university
+National University of Ireland, Maynooth;university
+Kangwon National University;university
+Royal Veterinary College, University of London;university
+Wright State University - Dayton;university
+Capital Medical University;university
+University of Brighton;university
+Sofia University;university
+University of Regina;university
+Magna Græcia University of Catanzaro;university
+Chungbuk National University;university
+Kōchi University;university
+University of New Brunswick;university
+Sejong University;university
+Sharif University of Technology;university
+Chung-Ang University;university
+Queens College, City University of New York;university
+Murdoch University;university
+Chosun University;university
+Vilnius University;university
+University of Maribor;university
+Ritsumeikan University;university
+University of Sassari;university
+Nanjing Normal University;university
+University of Franche-Comté;university
+University of Texas at El Paso;university
+Rio de Janeiro State University;university
+Jinan University;university
+University of Massachusetts Boston;university
+University of Alcalá;university
+Tehran University of Medical Sciences;university
+University of the Ryukyus;university
+University of Angers;university
+Fluminense Federal University;university
+Florida Institute of Technology;university
+Trent University;university
+National Chung Cheng University;university
+Bilkent University;university
+National Taiwan Normal University;university
+Saitama University;university
+RMIT University;university
+Hamamatsu University School of Medicine;university
+University of Greifswald;university
+University of Pécs;university
+University of Fukui;university
+Oakland University;university
+Nanjing University of Technology;university
+University of Technology, Sydney;university
+University of North Carolina at Greensboro;university
+All India Institute of Medical Sciences, New Delhi;university
+Kyoto Institute of Technology;university
+Ocean University of China;university
+Chiang Mai University;university
+University of Camerino;university
+Hirosaki University;university
+University of North Dakota;university
+University of Extremadura;university
+Teikyo University;university
+Jiangnan University;university
+Adam Mickiewicz University in Poznań;university
+University of Waikato;university
+University of Veterinary Medicine Vienna;university
+University of Cádiz;university
+Florida Atlantic University;university
+Huazhong Agricultural University;university
+Brock University;university
+University of Lleida;university
+Shanghai Normal University;university
+Jean Monnet University;university
+Shimane University;university
+University of Orléans;university
+University of Siegen;university
+Makerere University;university
+University of Wales, Trinity Saint David;university
+National Taiwan University of Science and Technology;university
+University of Brasília;university
+University of Western Brittany;university
+Nanjing Agricultural University;university
+National University of Córdoba;university
+Federal University of Santa Catarina;university
+National Taiwan Ocean University;university
+Gazi University;university
+National University of Colombia;university
+University of Jaén;university
+Boğaziçi University;university
+Jadavpur University;university
+Pukyong National University;university
+University of Western Sydney;university
+Northeastern University (China);university
+University of Mannheim;university
+University of Osnabrück;university
+Charles Darwin University;university
+University of Hyderabad;university
+Northwest University (China);university
+University of Southern Mississippi;university
+University of Wrocław;university
+Carlos III University of Madrid;university
+Novosibirsk State University;university
+Nanjing Medical University;university
+Nicolaus Copernicus University in Toruń;university
+Federal University of Santa Maria;university
+Chemnitz University of Technology;university
+Southwest University;university
+Wrocław University of Technology;university
+University of California, Merced;university
+United Arab Emirates University;university
+Federal University of São Carlos;university
+University of Thessaly;university
+University of Basilicata;university
+Feng Chia University;university
+Federal University of Paraná;university
+University of Almería;university
+Hallym University;university
+Fourth Military Medical University;university
+University of the Republic (Uruguay);university
+Dokuz Eylül University;university
+Nanjing University of Aeronautics and Astronautics;university
+Public University of Navarre;university
+University of A Coruña;university
+Isfahan University of Technology;university
+University of New England (Australia);university
+Federal University of Pernambuco;university
+Jiangsu University;university
+Third Military Medical University;university
+South China Normal University;university
+University of Limerick;university
+Xiangtan University;university
+Yangzhou University;university
+Northwestern Polytechnical University;university
+University of Reims Champagne-Ardenne;university
+Ibaraki University;university
+Chung Shan Medical University;university
+Alexandria University;university
+Yuan Ze University;university
+University of Cyprus;university
+University of Silesia;university
+Southern Medical University;university
+Shiraz University;university
+University of Bucharest;university
+Mansoura University;university
+Amirkabir University of Technology;university
+Beijing Jiaotong University;university
+University of Valenciennes and Hainaut-Cambresis;university
+University of the Algarve;university
+University of Chemistry and Technology, Prague;university
+Federal University of Ceará;university
+Ain Shams University;university
+University of Oldenburg;university
+Federal University of Bahia;university
+Hunan Normal University;university
+Western Michigan University;university
+University of Seoul;university
+Federico Santa María Technical University;university
+Ryerson University;university
+South China Agricultural University;university
+Fu Jen Catholic University;university
+China Pharmaceutical University;university
+Tarbiat Modares University;university
+University of Puerto Rico at Mayagüez;university
+National University of Rosario;university
+University of Pau and Pays de l'Adour;university
+Xidian University;university
+Zhejiang University of Technology;university
+China Medical University (PRC);university
+Federal University of ABC;university
+King Juan Carlos University;university
+Beijing University of Technology;university
+Guangxi University;university
+Northwest A&F University;university
+Shanxi University;university
+Tamkang University;university
+Harbin Medical University;university
+Zhejiang Normal University;university
+King Abdulaziz University;university
+Iran University of Science and Technology;university
+I-Shou University;university
+University of Maine (Le Mans);university
+National Dong Hwa University;university
+National Taipei University of Technology;university
+Shaanxi Normal University;university
+National University of Defense Technology;university
+Yanbian University;university
+Harvard University;university
+Stanford University;university
+Massachusetts Institute of Technology;university
+University of Cambridge;university
+University of Oxford;university
+Columbia University;university
+University of California, Berkeley;university
+University of Chicago;university
+Princeton University;university
+Cornell University;university
+Yale University;university
+California Institute of Technology;university
+University of Tokyo;university
+University of Pennsylvania;university
+University of California, Los Angeles;university
+Johns Hopkins University;university
+Kyoto University;university
+New York University;university
+University of Michigan, Ann Arbor;university
+Swiss Federal Institute of Technology in Zurich;university
+University of California, San Diego;university
+Northwestern University;university
+Hebrew University of Jerusalem;university
+Seoul National University;university
+University of Wisconsin–Madison;university
+University of California, San Francisco;university
+University College London;university
+Duke University;university
+Rockefeller University;university
+University of Texas at Austin;university
+University of Washington - Seattle;university
+University of Toronto;university
+University of Illinois at Urbana–Champaign;university
+Keio University;university
+Imperial College London;university
+École Polytechnique;university
+École normale supérieure - Paris;university
+Waseda University;university
+Weizmann Institute of Science;university
+University of North Carolina at Chapel Hill;university
+University of Virginia;university
+McGill University;university
+Purdue University, West Lafayette;university
+Dartmouth College;university
+Osaka University;university
+University of Pittsburgh - Pittsburgh Campus;university
+Pennsylvania State University, University Park;university
+University of Minnesota, Twin Cities;university
+Ohio State University, Columbus;university
+Rutgers University-New Brunswick;university
+University of Southern California;university
+Washington University in St. Louis;university
+University of California, Davis;university
+University of Colorado Boulder;university
+University of Edinburgh;university
+Peking University;university
+National Taiwan University;university
+University of Paris-Sud;university
+Lomonosov Moscow State University;university
+University of Florida;university
+Carnegie Mellon University;university
+University of British Columbia;university
+Pierre-and-Marie-Curie University;university
+University of California, Santa Barbara;university
+National University of Singapore;university
+Boston University;university
+University of Manchester;university
+University of Arizona;university
+Vanderbilt University;university
+University of Utah;university
+Karolinska Institute;university
+University of Maryland, College Park;university
+Tohoku University;university
+University of Copenhagen;university
+University of Texas Southwestern Medical Center;university
+Ruprecht Karl University of Heidelberg;university
+University of Notre Dame;university
+Tsinghua University;university
+Ludwig Maximilian University of Munich;university
+Georgia Institute of Technology;university
+University of Rochester;university
+Katholieke Universiteit Leuven;university
+Brown University;university
+Emory University;university
+Erasmus University Rotterdam;university
+Tel Aviv University;university
+Utrecht University;university
+University of Sydney;university
+University of California, Irvine;university
+University of Texas MD Anderson Cancer Center;university
+Swiss Federal Institute of Technology in Lausanne;university
+University of Geneva;university
+University of Melbourne;university
+King's College London;university
+Tufts University;university
+University of Zurich;university
+Arizona State University;university
+Yonsei University;university
+University of Oslo;university
+Kyushu University;university
+Technical University of Munich;university
+Texas A&M University, College Station;university
+University of Queensland;university
+Mines ParisTech;university
+Case Western Reserve University;university
+Indiana University - Bloomington;university
+University of Alberta;university
+Leiden University;university
+Tokyo Institute of Technology;university
+University of Groningen;university
+University of Helsinki;university
+Sapienza University of Rome;university
+Georgetown University;university
+University of Amsterdam;university
+Korea University;university
+University of Barcelona;university
+Lund University;university
+Michigan State University;university
+Ghent University;university
+Rice University;university
+Baylor College of Medicine;university
+Aarhus University;university
+University of Bristol;university
+Uppsala University;university
+Nagoya University;university
+Royal Institute of Technology;university
+University of Colorado Denver;university
+University of Glasgow;university
+VU University Amsterdam;university
+University of New South Wales;university
+Paris Diderot University - Paris 7;university
+University of São Paulo;university
+Western University (The University of Western Ontario);university
+Radboud University Nijmegen;university
+Nanyang Technological University;university
+Technion – Israel Institute of Technology;university
+University of Miami;university
+Stony Brook University;university
+University of Texas at Dallas;university
+University of Nottingham;university
+University of Iowa;university
+Southern Methodist University;university
+Icahn School of Medicine at Mount Sinai;university
+Korea Advanced Institute of Science and Technology (KAIST);university
+Monash University;university
+University of Alabama at Birmingham;university
+Free University of Berlin;university
+University of Southampton;university
+University of the Witwatersrand;university
+McMaster University;university
+University of Montreal;university
+University of Birmingham;university
+Humboldt University of Berlin;university
+University of California, Santa Cruz;university
+Albert Ludwig University of Freiburg;university
+University of Tübingen;university
+University of Cincinnati;university
+University of Bonn;university
+Wake Forest University;university
+University of Basel;university
+University of Leeds;university
+University of Hamburg;university
+Université libre de Bruxelles;university
+Indiana University-Purdue University Indianapolis;university
+Pohang University of Science and Technology;university
+Oregon Health & Science University;university
+University of Calgary;university
+Stockholm University;university
+University of Padua;university
+University of Hong Kong;university
+Yeshiva University;university
+University of Milan;university
+University of Sheffield;university
+Technical University of Denmark;university
+University of Maryland, Baltimore;university
+Goethe University Frankfurt;university
+University of Göttingen;university
+Hokkaido University;university
+Australian National University;university
+Shanghai Jiao Tong University;university
+University of New Mexico;university
+University of Strasbourg;university
+University of Massachusetts Medical School;university
+University of Houston;university
+Trinity College, Dublin;university
+University of Lausanne;university
+Iowa State University;university
+Joseph Fourier University;university
+Wayne State University;university
+University of South Florida - Tampa;university
+Zhejiang University;university
+Hanyang University;university
+University of Ottawa;university
+University of Missouri–Columbia;university
+Fudan University;university
+University of Kansas;university
+University of Cologne;university
+University of Georgia;university
+University of Liverpool;university
+University of Bern;university
+Cardiff University;university
+George Washington University;university
+University of Illinois at Chicago;university
+University of Erlangen-Nuremberg;university
+University of Münster;university
+Aix-Marseille University;university
+Claude Bernard University Lyon 1;university
+University of Bologna;university
+Queen Mary University of London;university
+Dresden University of Technology;university
+Sungkyunkwan University;university
+Newcastle University;university
+Karlsruhe Institute of Technology;university
+University of California, Riverside;university
+University of Kiel;university
+University of Western Australia;university
+Paris Descartes University;university
+University of Connecticut;university
+University of Massachusetts Amherst;university
+Chinese University of Hong Kong;university
+University of Turin;university
+University of Manitoba;university
+University of Vienna;university
+University of Montpellier;university
+Maastricht University;university
+National Cheng Kung University;university
+University of Tennessee, Knoxville;university
+Complutense University of Madrid;university
+Laval University;university
+RWTH Aachen University;university
+Université catholique de Louvain;university
+North Carolina State University;university
+Johannes Gutenberg University of Mainz;university
+University of Texas Health Science Center at San Antonio;university
+Julius-Maximilian's University of Würzburg;university
+Paul Sabatier University - Toulouse III;university
+University of Gothenburg;university
+University College Dublin;university
+University of Science and Technology of China;university
+University of Leicester;university
+Autonomous University of Barcelona;university
+University of Dundee;university
+Norwegian University of Science and Technology;university
+Nanjing University;university
+Okayama University;university
+London School of Hygiene & Tropical Medicine;university
+University of Florence;university
+University of Cape Town;university
+University of Texas Health Science Center at Houston;university
+Moscow Institute of Physics and Technology;university
+University of Düsseldorf;university
+Florida State University;university
+University of Sussex;university
+Thomas Jefferson University;university
+Delft University of Technology;university
+Virginia Polytechnic Institute and State University;university
+University of Lisbon;university
+Drexel University;university
+Virginia Commonwealth University;university
+Oregon State University;university
+Durham University;university
+University of Tsukuba;university
+University of Reading;university
+Lehigh University;university
+Medical University of Vienna;university
+University of Auckland;university
+University of Kentucky;university
+University of Naples Federico II;university
+University of Waterloo;university
+Charles University in Prague;university
+Colorado State University - Fort Collins;university
+Tulane University;university
+University at Buffalo, The State University of New York;university
+Brandeis University;university
+Northeastern University;university
+Wageningen University and Research Centre;university
+Sun Yat-sen University;university
+University of Ulm;university
+London School of Economics;university
+Vrije Universiteit Brussel;university
+University of Delaware;university
+Rensselaer Polytechnic Institute;university
+University of Bergen;university
+Queen's University;university
+University of Aberdeen;university
+Dalhousie University;university
+Umeå University;university
+University of Duisburg-Essen;university
+City College of New York;university
+Hiroshima University;university
+University of Texas at San Antonio;university
+Hannover Medical School;university
+University of Warwick;university
+University of Valencia;university
+University of Pisa;university
+Ruhr University Bochum;university
+Medical College of Wisconsin;university
+University of Louisville;university
+University of Bordeaux;university
+University of South Carolina - Columbia;university
+National and Kapodistrian University of Athens;university
+Leipzig University;university
+Medical University of South Carolina;university
+Autonomous University of Madrid;university
+Dalian University of Technology;university
+Stellenbosch University;university
+Kyungpook National University;university
+University of Porto;university
+University of St Andrews;university
+Gwangju Institute of Science and Technology;university
+Chulalongkorn University;university
+University of Antwerp;university
+Xiamen University;university
+University of Nebraska–Lincoln;university
+Nankai University;university
+University of Stuttgart;university
+University of Rome Tor Vergata;university
+University of Regensburg;university
+Hong Kong University of Science and Technology;university
+Kobe University;university
+University of Liège;university
+Federal University of Rio de Janeiro;university
+Rush University;university
+University of Vermont;university
+University of York;university
+Boston College;university
+University of Pavia;university
+University of Jena;university
+Vita-Salute San Raffaele University;university
+University of Genoa;university
+Tianjin University;university
+Louisiana State University - Baton Rouge;university
+University of Exeter;university
+National Autonomous University of Mexico;university
+University of Adelaide;university
+University of East Anglia;university
+York University;university
+University of Navarra;university
+University of Oregon;university
+St George's, University of London;university
+Indian Institute of Technology Delhi;university
+University of Trieste;university
+Queen's University Belfast;university
+University of Perugia;university
+Technical University of Berlin;university
+University of Marburg;university
+University of Innsbruck;university
+Eindhoven University of Technology;university
+Ben-Gurion University of the Negev;university
+University of Oklahoma - Norman Campus;university
+Wesleyan University;university
+University of Victoria;university
+Kansas State University;university
+Hong Kong Polytechnic University;university
+Linköping University;university
+University of Southern Denmark;university
+University of Otago;university
+Justus Liebig University Giessen;university
+University of New Hampshire;university
+College of William and Mary;university
+San Diego State University;university
+Simon Fraser University;university
+University of Santiago de Compostela;university
+Saint Louis University;university
+Colorado School of Mines;university
+University of Eastern Finland;university
+University of Buenos Aires;university
+University of Guelph;university
+University of Ferrara;university
+Polytechnic University of Catalonia;university
+Versailles Saint-Quentin-en-Yvelines University;university
+Saarland University;university
+City University of Hong Kong;university
+Darmstadt University of Technology;university
+Pompeu Fabra University;university
+Pontifical Catholic University of Chile;university
+University of Bari Aldo Moro;university
+University of Texas Medical Branch at Galveston;university
+University of Delhi;university
+Washington State University, Pullman;university
+Temple University;university
+University of Milan - Bicocca;university
+University of Turku;university
+Chonnam National University;university
+University of Lorraine;university
+National Chiao Tung University;university
+Catholic University of the Sacred Heart;university
+University at Albany, SUNY;university
+Xi'an Jiaotong University;university
+Ewha Womans University;university
+Jilin University;university
+Tokyo Medical and Dental University;university
+Scuola Normale Superiore di Pisa;university
+University of Central Florida;university
+Innsbruck Medical University;university
+Beijing Normal University;university
+Polytechnic University of Milan;university
+University of Seville;university
+University of Nebraska Medical Center;university
+Huazhong University of Science and Technology;university
+Kyung Hee University;university
+Chalmers University of Technology;university
+Brigham Young University;university
+University of Campinas;university
+University of Bath;university
+Saint Petersburg State University;university
+National Tsing Hua University;university
+University of Twente;university
+University of Alabama - Tuscaloosa;university
+Harbin Institute of Technology;university
+University of Verona;university
+Oklahoma State University–Stillwater;university
+Shandong University;university
+George Mason University;university
+Wuhan University;university
+Swedish University of Agricultural Sciences;university
+Concordia University;university
+Chiba University;university
+Kumamoto University;university
+Tongji University;university
+Aalto University;university
+Chonbuk National University;university
+Peking Union Medical College;university
+Georgia Regents University;university
+University of Chile;university
+Lancaster University;university
+Vienna University of Technology;university
+University of Denver;university
+University of Arkansas for Medical Sciences;university
+Grenoble Institute of Technology;university
+University of Granada;university
+University of Modena and Reggio Emilia;university
+Ajou University;university
+Gyeongsang National University;university
+Technical University of Madrid;university
+University College Cork;university
+Loyola University Chicago;university
+Central South University;university
+South China University of Technology;university
+Polytechnic University of Valencia;university
+West Virginia University;university
+University of Tampere;university
+Southeast University;university
+Miami University;university
+University of Dayton;university
+University of Siena;university
+University of Oulu;university
+Indian Institute of Science;university
+Macquarie University;university
+University of Rostock;university
+Jagiellonian University;university
+Pusan National University;university
+University of Strathclyde;university
+University of Nevada, Reno;university
+University of Saskatchewan;university
+University of Parma;university
+Kanazawa University;university
+Eötvös Loránd University;university
+Aristotle University of Thessaloniki;university
+Ohio University;university
+University of Iceland;university
+University of Warsaw;university
+Syracuse University;university
+Bielefeld University;university
+Juntendo University;university
+University of Wyoming;university
+University of Wollongong;university
+Niigata University;university
+Texas Tech University (TTU);university
+Middle East Technical University;university
+École normale supérieure de Lyon;university
+Brunel University;university
+Nihon University;university
+Osaka City University;university
+University of Rennes 1;university
+University of Oklahoma Health Sciences Center;university
+East China University of Science and Technology;university
+University of KwaZulu-Natal;university
+Sichuan University;university
+Illinois Institute of Technology;university
+Tokyo University of Science;university
+University of Science, Malaysia;university
+Clemson University;university
+University of Zaragoza;university
+University of the Basque Country;university
+Nagasaki University;university
+Technical University of Dortmund;university
+University of Hawaii at Manoa;university
+University of Nebraska Omaha;university
+University of Konstanz;university
+Panjab University;university
+University of Hanover;university
+University of Maryland, Baltimore County;university
+University of Newcastle;university
+University of Ulsan;university
+Renmin University of China;university
+Martin Luther University of Halle-Wittenberg;university
+University of Malaya;university
+University of Savoy;university
+University of Udine;university
+Tokyo Metropolitan University;university
+University of Sherbrooke;university
+University of Brescia;university
+University of Ljubljana;university
+University of Nice Sophia Antipolis;university
+University of Hull;university
+University of Coimbra;university
+Creighton University;university
+Georgia State University;university
+University of Wisconsin–Milwaukee;university
+Catholic University of Korea;university
+University of Tokushima;university
+Yokohama City University;university
+Lanzhou University;university
+University of Crete;university
+SUNY Downstate Medical Center;university
+University of Potsdam;university
+Yokohama National University;university
+New Mexico State University;university
+University of Bayreuth;university
+Bar-Ilan University;university
+University of Mississippi - Oxford Campus;university
+University of Tasmania;university
+Graduate University for Advanced Studies;university
+University of Surrey;university
+Federal University of Minas Gerais;university
+University of Tromsø - The Arctic University of Norway;university
+University of Palermo;university
+Shinshu University;university
+University of Science and Technology Beijing;university
+University of Catania;university
+Mahidol University;university
+University of Canterbury;university
+Indian Institute of Technology Madras;university
+University of Bremen;university
+Otto-von-Guericke University Magdeburg;university
+University of Tartu;university
+University of Windsor;university
+University of Nantes;university
+Royal Holloway, University of London;university
+James Cook University;university
+National Yang-Ming University;university
+University of Akron;university
+National Chung Hsing University;university
+City University London;university
+New York Medical College;university
+Nara Institute of Science and Technology;university
+École Centrale Paris;university
+Auburn University;university
+University of Arkansas - Fayetteville;university
+University of Zagreb;university
+University of Lübeck;university
+Hunan University;university
+University of Missouri–Kansas City;university
+Tokyo Women's Medical University;university
+Montana State University - Bozeman;university
+University of Aveiro;university
+National University of Ireland, Galway;university
+University of Oviedo;university
+Dongguk University;university
+University of Trento;university
+University Lille 1: Sciences and Technologies;university
+Chang Gung University;university
+National Central University;university
+Aalborg University;university
+Utah State University;university
+Baylor University;university
+Bangor University;university
+King Saud University;university
+University of Cagliari;university
+Kent State University;university
+Central China Normal University;university
+University of Fribourg;university
+Medical University of Graz;university
+Second University of Naples;university
+International School for Advanced Studies;university
+Tampere University of Technology;university
+Inha University;university
+Deakin University;university
+National Polytechnic Institute of Toulouse;university
+Sogang University;university
+University of Ioannina;university
+Federal University of Rio Grande do Sul;university
+University of Graz;university
+University of Montana - Missoula;university
+East China Normal University;university
+Plymouth University;university
+Victoria University of Wellington;university
+Federal University of São Paulo;university
+Southern Illinois University Carbondale;university
+University of Alaska Fairbanks;university
+University of Toledo;university
+Carleton University;university
+Cranfield University;university
+Curtin University;university
+Indian Institute of Technology Bombay;university
+University of Portsmouth;university
+Osaka Prefecture University;university
+Nagoya City University;university
+LSU Health Sciences Center New Orleans;university
+Tata Institute of Fundamental Research;university
+Konkuk University;university
+University of La Laguna;university
+University of Hertfordshire;university
+Florida International University;university
+University of Rhode Island;university
+Mississippi State University;university
+Gunma University;university
+University of New Orleans;university
+Putra University, Malaysia;university
+Memorial University of Newfoundland;university
+Universidade Nova de Lisboa;university
+Griffith University;university
+Indian Institute of Technology Kharagpur;university
+Soochow University (Suzhou);university
+Texas A&M Health Science Center;university
+Semmelweis University;university
+Lille 2 University of Health and Law;university
+Kagoshima University;university
+Flinders University;university
+Queensland University of Technology;university
+Tokai University;university
+Istanbul University;university
+Tokyo University of Agriculture and Technology;university
+Louisiana Tech University;university
+University of Texas at Arlington;university
+China Agricultural University;university
+Chungnam National University;university
+University of Minho;university
+"University of Eastern Piedmont ""Amedeo Avogadro"",Italy,33,367,567,218,693,623,645,540,739,44.46,2015
+631,""Open University (UK)";university
+University of Essex;university
+Paris-Est Créteil Val-de-Marne University;university
+Hacettepe University;university
+State University of New York Upstate Medical University;university
+Braunschweig University of Technology;university
+University of Salamanca;university
+Indian Institute of Technology Roorkee;university
+Örebro University;university
+Northeast Normal University;university
+University of Patras;university
+Beijing University of Chemical Technology;university
+Northern Illinois University;university
+Rovira i Virgili University;university
+La Trobe University;university
+Warsaw University of Technology;university
+Binghamton University;university
+Shizuoka University;university
+Hong Kong Baptist University;university
+Albany Medical College;university
+Ehime University;university
+University of Los Andes (Colombia);university
+Polytechnic University of Turin;university
+University of Burgundy;university
+University of Idaho;university
+Old Dominion University;university
+Yamaguchi University;university
+Massey University;university
+Donghua University;university
+University of the Balearic Islands;university
+Portland State University;university
+Marche Polytechnic University;university
+University of Québec at Montreal;university
+UNESP, São Paulo State University;university
+Loma Linda University;university
+University of Toyama;university
+University of Debrecen;university
+University of Maine, Orono;university
+Graz University of Technology;university
+Gifu University;university
+University of Jyväskylä;university
+University of Paris 13;university
+University of Girona;university
+Keele University;university
+University of Poitiers;university
+University of Insubria;university
+Wuhan University of Technology;university
+University of Pretoria;university
+Banaras Hindu University;university
+University of L'Aquila;university
+University of Alicante;university
+American University of Beirut;university
+University of Ulster;university
+Shanghai University;university
+Comenius University in Bratislava;university
+University of Vigo;university
+University of Nevada, Las Vegas;university
+Swinburne University of Technology;university
+Tilburg University;university
+University of Messina;university
+Kaiserslautern University of Technology;university
+University of Kent;university
+University of Málaga;university
+Loughborough University;university
+National Technical University of Athens;university
+Liverpool John Moores University;university
+Sharif University of Technology;university
+Birkbeck, University of London;university
+University François Rabelais, Tours;university
+University of Haifa;university
+Roma Tre University;university
+Masaryk University;university
+University of Salerno;university
+King Abdullah University of Science and Technology;university
+Beihang University;university
+Fuzhou University;university
+Heriot-Watt University;university
+China Medical University (Taiwan);university
+University of Cantabria;university
+Rochester Institute of Technology;university
+Royal College of Surgeons in Ireland;university
+San Francisco State University;university
+Sapporo Medical University;university
+Indian Institute of Technology Kanpur;university
+Johannes Kepler University of Linz;university
+Czech Technical University in Prague;university
+Marquette University;university
+Missouri University of Science and Technology;university
+Howard University;university
+Aston University;university
+École normale supérieure de Cachan;university
+Jichi Medical University;university
+Rutgers, The State University of New Jersey - Newark;university
+Palacký University, Olomouc;university
+Ankara University;university
+University of Belgrade;university
+Toho University;university
+Kyoto Prefectural University of Medicine;university
+Swansea University;university
+Université de Namur;university
+University of Szeged;university
+Kitasato University;university
+Hasselt University;university
+University of Córdoba (Spain);university
+Åbo Akademi University;university
+Tottori University;university
+Kindai University;university
+University of Castilla–La Mancha;university
+University of Augsburg;university
+Paul Valéry University, Montpellier III;university
+University of Mons;university
+Istanbul Technical University;university
+University of Natural Resources and Life Sciences, Vienna;university
+National University of La Plata;university
+University of Calabria;university
+University of Memphis;university
+G. d'Annunzio University, Chieti-Pescara;university
+University of Missouri–St. Louis;university
+Beijing Institute of Technology;university
+University of Évry Val d'Essonne;university
+University of South Australia;university
+University of Alabama in Huntsville;university
+University of Salzburg;university
+University of Mississippi Medical Center;university
+National Research Nuclear University MEPhI;university
+Chung-Ang University;university
+Kaohsiung Medical University;university
+University of Neuchâtel;university
+University of Yamanashi;university
+Yamagata University;university
+New Jersey Institute of Technology;university
+East Carolina University;university
+University of Hyogo;university
+University of Picardie Jules Verne;university
+University of Salento;university
+Northern Arizona University;university
+Miguel Hernández University of Elche;university
+University of Tehran;university
+Blaise Pascal University;university
+Yeungnam University;university
+Kurume University;university
+Institut national des sciences Appliquées de Lyon;university
+Saga University;university
+Chongqing University;university
+Jikei University School of Medicine;university
+Second Military Medical University;university
+Jawaharlal Nehru Centre for Advanced Scientific Research;university
+University of North Texas, Denton;university
+Ege University;university
+Mie University;university
+École Polytechnique de Montréal;university
+AGH University of Science and Technology;university
+University of Electronic Science and Technology of China;university
+University of Stirling;university
+University of Greifswald;university
+National Polytechnic Institute;university
+Jacobs University Bremen;university
+Capital Medical University;university
+Norwegian University of Life Sciences;university
+Michigan Technological University;university
+Vilnius University;university
+North Dakota State University - Main Campus;university
+University of Hohenheim;university
+University of North Carolina at Charlotte;university
+Zhengzhou University;university
+Cairo University;university
+University of Caen Lower Normandy;university
+Saitama Medical University;university
+University of Murcia;university
+Showa University;university
+University of Oldenburg;university
+Magna Græcia University of Catanzaro;university
+National Sun Yat-sen University;university
+Nanjing University of Science and Technology;university
+University of Concepción;university
+Chungbuk National University;university
+Taipei Medical University;university
+Jaume I University;university
+Bowling Green State University;university
+Nanjing University of Technology;university
+University of New England (Australia);university
+Kangwon National University;university
+Inje University;university
+Aberystwyth University;university
+University of Technology, Sydney;university
+University of Franche-Comté;university
+University of Sassari;university
+Chiang Mai University;university
+Budapest University of Technology and Economics;university
+University of Maribor;university
+University of Bradford;university
+University of Perpignan Via Domitia;university
+Florida Institute of Technology;university
+University of Brighton;university
+University of Massachusetts Boston;university
+Rio de Janeiro State University;university
+Nagoya Institute of Technology;university
+Jiangnan University;university
+Murdoch University;university
+University of Wales, Trinity Saint David;university
+University of Rouen;university
+The Catholic University of America;university
+Wright State University - Dayton;university
+Dankook University;university
+Clarkson University;university
+University of Regina;university
+Boğaziçi University;university
+Kōchi University;university
+University of Miyazaki;university
+University of Electro-Communications;university
+University of Valladolid;university
+Bilkent University;university
+Dublin City University;university
+University of South Alabama;university
+Sofia University;university
+Ocean University of China;university
+King Fahd University of Petroleum and Minerals;university
+University of Veterinary Medicine Vienna;university
+University of Alcalá;university
+Hunter College;university
+All India Institute of Medical Sciences, New Delhi;university
+Gazi University;university
+National University of Ireland, Maynooth;university
+Tehran University of Medical Sciences;university
+University of the Ryukyus;university
+Florida Atlantic University;university
+University of Siegen;university
+Huazhong Agricultural University;university
+University of Angers;university
+University of Seoul;university
+Brock University;university
+Fukuoka University;university
+Hamamatsu University School of Medicine;university
+Nanjing Normal University;university
+National Chung Cheng University;university
+Nanjing Agricultural University;university
+University of the Republic (Uruguay);university
+Sejong University;university
+Makerere University;university
+University of New Brunswick;university
+Northeastern University (China);university
+University of Extremadura;university
+RMIT University;university
+Royal Veterinary College, University of London;university
+Chung Yuan Christian University;university
+University of Osnabrück;university
+Northwest University (China);university
+Chosun University;university
+University of Orléans;university
+Jean Monnet University;university
+École centrale de Lyon;university
+University of Western Sydney;university
+Hefei University of Technology;university
+University of Massachusetts Lowell;university
+Manchester Metropolitan University;university
+Nanjing Medical University;university
+Kyoto Institute of Technology;university
+Shanghai Normal University;university
+Southwest University;university
+Adam Mickiewicz University in Poznań;university
+University of Calcutta;university
+University of Pécs;university
+Queens College, City University of New York;university
+University of Lleida;university
+Nanjing University of Aeronautics and Astronautics;university
+University of Western Brittany;university
+University of North Carolina at Greensboro;university
+Pukyong National University;university
+Fourth Military Medical University;university
+University of Fukui;university
+University of Southern Mississippi;university
+University of Mannheim;university
+Shimane University;university
+China University of Geosciences (Wuhan);university
+University of Thessaly;university
+Oakland University;university
+Wilfrid Laurier University;university
+Teikyo University;university
+Saitama University;university
+Trent University;university
+Nicolaus Copernicus University in Toruń;university
+Tarbiat Modares University;university
+University of North Dakota;university
+Isfahan University of Technology;university
+Fluminense Federal University;university
+National Taiwan University of Science and Technology;university
+University of Lethbridge;university
+Federal University of Santa Catarina;university
+University of Camerino;university
+University of Brasília;university
+University of Wrocław;university
+University of Basilicata;university
+Jadavpur University;university
+South China Normal University;university
+University of Hyderabad;university
+Ritsumeikan University;university
+Carlos III University of Madrid;university
+University of Cyprus;university
+University of Texas at El Paso;university
+University of Cádiz;university
+Shahid Beheshti University of Medical Sciences;university
+National Taiwan Normal University;university
+National University of Córdoba;university
+Federal University of Paraná;university
+University of Jaén;university
+University of California, Merced;university
+University of Waikato;university
+University of Central Lancashire;university
+Federal University of Pernambuco;university
+University of Almería;university
+Federal University of São Carlos;university
+Charles Darwin University;university
+Yangzhou University;university
+Wrocław University of Technology;university
+Hirosaki University;university
+National Taiwan Ocean University;university
+Jiangsu University;university
+Northwestern Polytechnical University;university
+Xiangtan University;university
+United Arab Emirates University;university
+Gachon University;university
+Hallym University;university
+Harbin Engineering University;university
+Dokuz Eylül University;university
+Jinan University;university
+Shiraz University;university
+Third Military Medical University;university
+Amirkabir University of Technology;university
+Public University of Navarre;university
+Federico Santa María Technical University;university
+Federal University of ABC;university
+University of Puerto Rico at Mayagüez;university
+Southern Medical University;university
+University of Silesia;university
+Ain Shams University;university
+University of Valenciennes and Hainaut-Cambresis;university
+Chung Shan Medical University;university
+National University of Colombia;university
+South China Agricultural University;university
+Ibaraki University;university
+Fu Jen Catholic University;university
+Hunan Normal University;university
+Ulsan National Institute of Science and Technology;university
+Federal University of Santa Maria;university
+Shenzhen University;university
+Tianjin Medical University;university
+Beijing University of Technology;university
+University of Reims Champagne-Ardenne;university
+Yuan Ze University;university
+University of Chemistry and Technology, Prague;university
+University of Limerick;university
+China Medical University (PRC);university
+Feng Chia University;university
+Zhejiang University of Technology;university
+Novosibirsk State University;university
+University of Bucharest;university
+Babeș-Bolyai University;university
+Mansoura University;university
+University of Pau and Pays de l'Adour;university
+Henan Normal University;university
+Xidian University;university
+Federal University of Bahia;university
+Southwest Jiaotong University;university
+Ryerson University;university
+King Abdulaziz University;university
+University of the Algarve;university
+Alexandria University;university
+Federal University of Ceará;university
+University of A Coruña;university
+China Pharmaceutical University;university
