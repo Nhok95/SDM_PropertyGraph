@@ -38,11 +38,28 @@ class Neo4JLoader:
                 SET v.vol=row.volume
                 MERGE (j)-[:PUBLISHED]-(y)
                 WITH row, p
-                UNWIND split(row.keywords, '|') AS keyword
+                UNWIND SPLIT(row.keywords, '|') AS keyword
                 MERGE (k:Keyword { topic: keyword})
                 MERGE (p)-[:TOPIC]-(k)
                 """)
         print("Journals and articles inserted")
+
+    def load_authors_articles(self):
+        print("Inserting authors for articles")
+        with self.driver.session() as session:
+            session.run("""
+                LOAD CSV WITH HEADERS FROM 'file:///journals_extracted.csv' AS row
+                FIELDTERMINATOR ';'
+                WITH row WHERE row.key IS NOT NULL AND row.title IS NOT NULL
+                MERGE (p:Paper { paperID: row.key, title: row.title, abstract: row.abstract})
+                WITH row, p, SPLIT(row.author, '|') AS author 
+                MERGE (a:Author { name: author[0]})
+                MERGE (p)-[:AUTHOR]->(a) 
+                WITH row, p, SPLIT(row.author, '|') AS author 
+                UNWIND RANGE(1,SIZE(author)-1) as i
+                MERGE (p)-[:COAUTHOR]->(a:Author { name: author[i]})
+                """)
+        print("Authors for articles inserted")
 
     def clean_all(self):
         print("Cleaning database...")

@@ -34,6 +34,7 @@ if __name__ == "__main__":
         print('Start bulk Loading...')
         #loader.load_authors()
         loader.load_journals_articles()
+        loader.load_authors_articles()
 
     elif args.mode == 'clean':
         print('Cleaning graph...')

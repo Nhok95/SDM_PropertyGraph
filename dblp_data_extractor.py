@@ -15,7 +15,7 @@ def random_keywords():
 	'Relational Databases', 'NLP', 'Data Mining', 'Data Engineering', 'High Performance Computing',
 	'Computer Networks']
 
-	samp = random.sample(keywords, random.randint(1,10))
+	samp = random.sample(keywords, random.randint(1,3))
 
 	return '|'.join(samp)
 
@@ -39,7 +39,7 @@ def journals_and_articles():
 	df = df.dropna()
 
 	# Just for test get only the first 100 rows
-	df = df.head(1000)
+	df = df.head(100)
 	
 	#print(df.head(1)['author'])
 	#print(type(df.head(1)['author']))
