@@ -2,6 +2,7 @@
 # !pip install neo4j
 import argparse
 from loader import Neo4JLoader
+from loader2 import Neo4JLoader2
 
 def GetParserArgs():
     parser = argparse.ArgumentParser()

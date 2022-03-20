@@ -1,9 +1,12 @@
+from asyncio import constants
 import pandas as pd
 import os
 from os.path import join
 import lorem
 import random
 import numpy as np
+
+import constant
 
 pathClean = join(os.getcwd(),'cleaned')
 pathCleanWH = join(pathClean,'withHeader')
@@ -43,7 +46,7 @@ def journals_and_articles():
 	df = df.dropna()
 
 	# Just for test get only the first 100 rows
-	df = df.head(100)
+	df = df.head(constants.N_TEST)
 	
 	#print(df.head(1)['author'])
 	#print(type(df.head(1)['author']))
