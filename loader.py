@@ -61,6 +61,18 @@ class Neo4JLoader:
                 """)
         print("Authors for articles inserted")
 
+    def load_paper_citations(self):
+        print("Inserting citations for papers")
+        with self.driver.session() as session:
+            session.run("""
+                MATCH (p:Paper)
+                WITH p
+                MATCH (c:Paper) 
+                WHERE p <> c AND rand() < 0.1
+                MERGE (p)-[:CITES]->(c)
+            """)
+        print("Citations for papers inserted")
+
     def clean_all(self):
         print("Cleaning database...")
         with self.driver.session() as session:
