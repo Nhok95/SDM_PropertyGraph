@@ -29,7 +29,10 @@ if __name__ == "__main__":
 
     if args.mode == 'load':
         print('Start bulk Loading...')
-        loader.load_authors()
+        #loader.load_authors()
+        loader.load_journals_articles()
+        loader.load_authors_articles()
+        loader.load_paper_citations()
 
     elif args.mode == 'clean':
         print('Cleaning graph...')
