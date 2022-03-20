@@ -9,7 +9,7 @@ import numpy as np
 import constant
 
 pathClean = join(os.getcwd(),'cleaned')
-pathCleanWH = join(pathClean,'withHeader')
+pathData = join(os.getcwd(),'data')
 pathOut = join(os.getcwd(), 'extracted')
 
 try:
@@ -27,15 +27,13 @@ def random_keywords():
 	return '|'.join(samp)
 
 def getCities():
-	df_city = pd.read_csv(join(os.getcwd(), 'world-cities.csv'), sep=',', encoding='utf8')
+	df_city = pd.read_csv(join(pathData, 'world-cities.csv'), sep=',', encoding='utf8')
 	#We get the 50 countries with higher HD Index.
-	df_hdi = pd.read_csv(join(os.getcwd(), 'hdi-countries.csv'), sep=',', encoding='utf8', nrows=50)
+	df_hdi = pd.read_csv(join(pathData, 'hdi-countries.csv'), sep=',', encoding='utf8', nrows=50)
 	
 	
 	df_city = df_city.filter(['name','country'])
 	country_list = list(df_hdi['country'])
-
-	print(country_list)
 
 	# We get 3 random cities of every country (replace is True due to there are some countries with less than 3 
 	# and, in these cases, we want to get that cities even if we have to duplicate it)
@@ -51,42 +49,46 @@ def lorem_abstract_generator():
 	return lorem.paragraph()
 
 def conferences():
-	df = pd.read_csv(join(pathClean, 'output_proceedings.csv'), sep=';', encoding='utf8', low_memory=False)
-	df2 = pd.read_csv(join(pathClean, 'output_inproceedings.csv'), sep=';', encoding='utf8', low_memory=False)
-
-	# 
-	df = df.filter(['booktitle', 'title', 'key', 'year'])
-
 	df_cities = getCities()
-	
 
+	df = pd.read_csv(join(pathClean, 'output_inproceedings.csv'), sep=';', encoding='utf8', low_memory=False)
+	df2 = pd.read_csv(join(pathClean, 'output_proceedings.csv'), sep=';', encoding='utf8', low_memory=False)
+	
 	# booktitle -> conference name
 	# author -> author array
 	# year -> to create the relationship and include it as a new instance of Year.
+	df = df.filter(['booktitle','author','key','year'])
+	df['year'] = pd.to_numeric(df['year'], errors='ignore')
+	df['abstract'] = [lorem_abstract_generator()]*len(df)
+	df['keywords'] = [random_keywords() for i in range(0,len(df))]
+	print(df.shape)
 
 	# We assume a edition is identified by a city 
-	df2 = df2.filter(['booktitle','author','key','year'])
+	df2 = df2.filter(['booktitle', 'title', 'key', 'year'])
+
 	df2['year'] = pd.to_numeric(df2['year'], errors='ignore')
-	df2['abstract'] = [lorem_abstract_generator()]*len(df2)
-	df2['keywords'] = [random_keywords() for i in range(0,len(df2))]
-	print(df2.shape)
+	#df2[['city','country']] = df_cities.sample(n=len(df))
+	
+
+	
 
 	print("HEAD:")
 	print(df.head())
-	print(df2.head())
+	#print(df2.head())
 
 	df = df.dropna(axis='index')
 	df2 = df2.dropna(axis='index')
 	print("NEW SHAPE:")
 	print(df.shape)
-	print(df2.shape)
+	#print(df2.shape)
 
 	# Just for test get only the first 100 rows
 	df = df.head(constant.N_TEST)
 	df2 = df2.head(constant.N_TEST)
 
-	df2.to_csv(join(pathOut,'conferences_extracted.csv'), sep=';', encoding='utf8', index=False)
+	df.to_csv(join(pathOut,'conferences_extracted.csv'), sep=';', encoding='utf8', index=False)
+	#df2.to_csv(join(pathOut,'conferences_extracted.csv'), sep=';', encoding='utf8', index=False)
 
 
-#conferences()
-getCities()
+conferences()
+#getCities()
