@@ -34,7 +34,7 @@ def cleanDF(df):
     if df.shape[0] > constant.N and df.shape[1] > 2:
         df = df.sample(n=constant.N)
 
-    df = df.dropna(axis='columns', how='all')
+    df = df.dropna(axis='index', how='all')
 
     print("new shape: {}".format(df.shape))
 
@@ -88,6 +88,9 @@ for file,header in zip(list1,list2):
 
     df = pd.read_csv(join(path, file), sep=';', encoding='utf8',header=None, names=header, low_memory=False)
     
+    # conferences
+    
+
     df_cleaned = cleanDF(df)
     df_cleaned.to_csv(join(pathClean, file), sep=';', encoding='utf8', index=False)
 

@@ -11,25 +11,75 @@ class Neo4JLoader:
 
         print("connection closed")
         self.driver.close()
+    
+    @staticmethod
+    def printResult(result, mode="insert"):
 
-    def load_authors(self):
-        print("Inserting authors...")
+        counter = result.consume().counters
+        if counter.contains_updates:
+            if (mode == "insert"):
+                print(
+                    '''Added {0} labels, 
+                    Created {1} nodes, 
+                    Set {2} properties.'''.format(
+                        counter.labels_added, 
+                        counter.nodes_created, 
+                        counter.properties_set)
+                    )
+            elif (mode == "clean"):
+                print(
+                    '''Deleted {0} nodes. '''.format(counter.nodes_deleted)
+                    )
+            elif (mode == "test"):
+                print(counter)
+        else:
+            print("No updates")
+        
+        return True
+
+    def load_researchers(self):
+        print("Inserting researchers...")
         with self.driver.session() as session:
-            session.run("""
-                LOAD CSV WITH HEADERS FROM 'file:///output_author_2.csv' AS row 
+            result = session.run("""
+                USING PERIODIC COMMIT 1000
+                LOAD CSV WITH HEADERS FROM 'file:///output_author.csv' AS row 
+                FIELDTERMINATOR ';'
+                WITH row WHERE row.ID IS NOT NULL 
+                MERGE (a:Researcher { authorID:row.ID, name:row.author })
+                """)
+            
+            if self.printResult(result):
+                print("Researchers inserted")
+            else:
+                print("Error inserting authors")
+
+    def load_conference(self):
+        print("Inserting conferences...")
+        with self.driver.session() as session:
+            result = session.run("""
+                USING PERIODIC COMMIT 1000
+                LOAD CSV WITH HEADERS FROM 'file:///output_conferences_2.csv' AS row 
                 FIELDTERMINATOR ';'
                 WITH row WHERE row.ID IS NOT NULL 
                 MERGE (a:Author { authorID:row.ID, name:row.author })
                 """)
-        
-        print("Authors inserted")
+            
+            if self.printResult(result):
+                print("Authors inserted")
+            else:
+                print("Error inserting authors")
         
 
     def clean_all(self):
         print("Cleaning database...")
         with self.driver.session() as session:
-            session.run("""
+            result = session.run("""
                 MATCH (n) DELETE n
                 """)
+            
+        if self.printResult(result, "clean"):
+            print("Database cleaned")
+        else:
+            print("Error cleaning the database")
         
-        print("Database cleaned")
+        

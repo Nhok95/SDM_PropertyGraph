@@ -21,9 +21,6 @@ def GetParserArgs():
 
 if __name__ == "__main__":
     args = GetParserArgs()
-    print(args.mode)
-    print(args.user)
-    print(args.password)
 
     if args.password == None:
         loader = Neo4JLoader("bolt://localhost:7687")
