@@ -73,6 +73,21 @@ class Neo4JLoader:
             """)
         print("Citations for papers inserted")
 
+    def load_organizations(self):
+        print("Inserting organizations")
+        with self.driver.session() as session:
+            session.run("""
+                LOAD CSV WITH HEADERS FROM 'file:///journals_extracted.csv' AS row
+                FIELDTERMINATOR ';'
+                WITH row
+                MERGE (o:Organization { name:row.organization, type:row.type})
+                WITH row, o
+                UNWIND SPLIT(row.author, '|') AS author
+                MATCH (s:Scientist { name: author})
+                CREATE (s)-[:AFFILIATED]->(o)
+                """)
+        print("Organizations inserted")
+
     def clean_all(self):
         print("Cleaning database...")
         with self.driver.session() as session:
