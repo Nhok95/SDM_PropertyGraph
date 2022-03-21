@@ -24,7 +24,6 @@ def lorem_abstract_generator():
 	return lorem.paragraph()
 
 
-
 def journals_and_articles(k):
 	df = pd.read_csv(join(pathClean, 'output_article.csv'), sep=';', encoding='utf8')
 	df2 = pd.read_csv(join(pathCleanWH, 'org_shuffle.csv'), sep=';', encoding='utf-8')
@@ -44,9 +43,37 @@ def journals_and_articles(k):
 
 	df = df.dropna()
 	
-	#print(df.head(1)['author'])
-	#print(type(df.head(1)['author']))
 	df.to_csv(join(pathOut,'journals_extracted.csv'), sep=';', encoding='utf8', index=False)
 
+def get_authors_pool():
+	df = pd.read_csv(join(pathOut,'journals_extracted.csv'), sep=';', encoding='utf-8')
 
-journals_and_articles(100)
+	authors = df['author'].str.split('|').apply(pd.Series).stack().reset_index(drop=True)
+	authors = authors.drop_duplicates()
+	df_authors = authors.to_frame()
+	df_authors['reviewer'] = df_authors
+	df_authors = df_authors['reviewer']
+
+	df_authors.to_csv(join(pathOut, 'reviewers.csv'), sep=';', encoding='utf-8', index=False)
+
+def add_random_reviewers_articles():
+	df_articles = pd.read_csv(join(pathOut,'journals_extracted.csv'), sep=';', encoding='utf-8')
+	df_reviewers = pd.read_csv(join(pathOut,'reviewers.csv'), sep=';', encoding='utf-8')
+
+	rev_pool = df_reviewers['reviewer'].tolist()
+
+	reviewers = [None]*len(df_articles)
+
+	for index, row in df_articles.iterrows():
+		authors = set(row['author'].split('|'))
+		rev = [r for r in rev_pool if r not in authors]
+		reviewers[index] = "|".join(random.choices(rev,k=3))
+
+	df_articles['reviewers'] = reviewers
+	df_articles.to_csv(join(pathOut,'journals_extracted.csv'), sep=';', encoding='utf8', index=False)
+
+
+
+#journals_and_articles(100)
+#get_authors_pool()
+add_random_reviewers_articles()
