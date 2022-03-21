@@ -20,7 +20,7 @@ def random_keywords():
 	return '|'.join(samp)
 
 
-def lorem_abstract_generator():
+def lorem_generator():
 	return lorem.paragraph()
 
 
@@ -37,7 +37,7 @@ def journals_and_articles(k):
 	# volume
 	df = df.filter(['key', 'title', 'author', 'ee', 'journal', 'volume', 'year'])
 	df['year'] = pd.to_numeric(df['year'], errors='ignore')
-	df['abstract'] = [lorem_abstract_generator()]*len(df)
+	df['abstract'] = [lorem_generator()]*len(df)
 	df['keywords'] = [random_keywords() for i in range(0,len(df))]
 	df[['organization', 'type']] = df2.head(k)
 
@@ -45,7 +45,7 @@ def journals_and_articles(k):
 	
 	df.to_csv(join(pathOut,'journals_extracted.csv'), sep=';', encoding='utf8', index=False)
 
-def get_authors_pool():
+def get_reviewers_random_pool():
 	df = pd.read_csv(join(pathOut,'journals_extracted.csv'), sep=';', encoding='utf-8')
 
 	authors = df['author'].str.split('|').apply(pd.Series).stack().reset_index(drop=True)
@@ -67,13 +67,16 @@ def add_random_reviewers_articles():
 	for index, row in df_articles.iterrows():
 		authors = set(row['author'].split('|'))
 		rev = [r for r in rev_pool if r not in authors]
-		reviewers[index] = "|".join(random.choices(rev,k=3))
+		random.shuffle(rev)
+		reviewers[index] = "|".join(rev[:3])
 
 	df_articles['reviewers'] = reviewers
+	df_articles['review'] = [lorem_generator()]*len(df_articles)
+	df_articles['decision'] = ['accepted']*len(df_articles)
 	df_articles.to_csv(join(pathOut,'journals_extracted.csv'), sep=';', encoding='utf8', index=False)
 
 
 
-#journals_and_articles(100)
-#get_authors_pool()
+journals_and_articles(100)
+get_reviewers_random_pool()
 add_random_reviewers_articles()

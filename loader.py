@@ -88,6 +88,21 @@ class Neo4JLoader:
                 """)
         print("Organizations inserted")
 
+    def load_article_reviews(self):
+        print("Inserting article reviews")
+        with self.driver.session() as session:
+            session.run("""
+                LOAD CSV WITH HEADERS FROM 'file:///journals_extracted.csv' AS row
+                FIELDTERMINATOR ';'
+                MATCH (p:Paper { paperID: row.key, title: row.title, abstract: row.abstract})
+                WITH row, p
+                UNWIND SPLIT(row.reviewers, '|') AS reviewer
+                MATCH (s:Scientist { name: reviewer})
+                CREATE (p)<-[r:REVIEWS]-(s)
+                SET r.text=row.review, r.decision=row.decision
+                """)
+        print("Article reviews inserted")
+
     def clean_all(self):
         print("Cleaning database...")
         with self.driver.session() as session:

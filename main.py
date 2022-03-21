@@ -35,6 +35,7 @@ if __name__ == "__main__":
         #loader.load_authors()
         loader.load_journals_articles()
         loader.load_authors_articles()
+        loader.load_article_reviews()
         loader.load_paper_citations()
         loader.load_organizations()
 
