@@ -16,6 +16,14 @@ WHERE Editions >= 4
 RETURN c.title, collect(s.name) AS Community
 
 
+Query 3
+--------
+MATCH (j:Journal)-->(p:Paper)<--(c:Paper)
+WITH j, p, count(c) AS Citations
+WHERE toInteger(j.year) IN [date().year-1,date().year-2]
+RETURN j.title, SUM(Citations)/count(p) AS IF
+
+
 
 
 Utilities
