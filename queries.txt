@@ -1,0 +1,38 @@
+Query 1 (comprobada con el caso de la conferencia ACC, usar utilities para mejor comprobacion)
+-------
+MATCH (c:Conference)-->(p:Paper)<--(p2:Paper)
+WITH c.title AS Conf, p as Paper, count(p2) AS Citations
+ORDER BY Citations DESC
+WITH Conf, collect(Paper.title) AS top
+RETURN Conf, top[..3] 
+ORDER BY Conf ASC 
+
+
+Query 2 (comprobada con un caso de que las ediciones fueran 2 en vez de 4 ya que no hay este ultimo caso, usar utilities para mejor visualización)
+-------
+MATCH (c:Conference)-->(p:Paper)-[:AUTHOR]->(s:Scientist) 
+WITH c, s, count(c) AS Editions
+WHERE Editions >= 4
+RETURN c.title, collect(s.name) AS Community
+
+
+
+
+Utilities
+---------
+
+Query 1
+ * Saca los papers de cada conferencia en orden por número de citas
+
+   MATCH (c:Conference)-[:PROCEEDING]->(p:Paper)<-[:CITES]-(p2:Paper) 
+   WITH c.title AS Conf, p.title as Paper, count(p2) AS Citations
+   RETURN Conf, Paper, Citations
+   ORDER BY Conf ASC
+
+Query 2
+ * Saca el numero de ediciones de conferencias en las que un autor tiene paper
+
+   MATCH (c:Conference)-->(p:Paper)-[:AUTHOR]->(s:Scientist) 
+   WITH c, s, count(c) AS Editions
+   ORDER BY Editions DESC
+   RETURN c.title,c s.name, Editions 
