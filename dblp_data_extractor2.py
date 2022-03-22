@@ -28,9 +28,8 @@ def random_keywords():
 
 def getCities():
 	df_city = pd.read_csv(join(pathData, 'world-cities.csv'), sep=',', encoding='utf8')
-	#We get the 50 countries with higher HD Index.
-	df_hdi = pd.read_csv(join(pathData, 'hdi-countries.csv'), sep=',', encoding='utf8', nrows=50)
-	
+	#We get the 30 countries with higher HD Index.
+	df_hdi = pd.read_csv(join(pathData, 'hdi-countries.csv'), sep=',', encoding='utf8', nrows=30)
 	
 	df_city = df_city.filter(['name','country'])
 	country_list = list(df_hdi['country'])
@@ -43,52 +42,78 @@ def getCities():
 	df_sample.drop_duplicates(inplace=True) 
 
 	#We return only countries with high HDI (just to filter to a small subset)
-	return df_sample[df_sample.country.isin(country_list)] 
+	df = df_sample[df_sample.country.isin(country_list)]
+	return  df.reset_index(drop=True)
 
 def lorem_abstract_generator():
 	return lorem.paragraph()
 
 def conferences():
-	df_cities = getCities()
+	df_cities = getCities() #83 cities
+	print(df_cities.shape)
 
 	df = pd.read_csv(join(pathClean, 'output_inproceedings.csv'), sep=';', encoding='utf8', low_memory=False)
 	df2 = pd.read_csv(join(pathClean, 'output_proceedings.csv'), sep=';', encoding='utf8', low_memory=False)
 	
-	# booktitle -> conference name
-	# author -> author array
+	# key -> article id in the system (not isbn or doi)
+	# title -> paper title
+	# author -> array of authors
 	# year -> to create the relationship and include it as a new instance of Year.
-	df = df.filter(['booktitle','author','key','year'])
+	# booktitle -> conference name
+	df = df.filter(['key','title','author','booktitle','year'])
 	df['year'] = pd.to_numeric(df['year'], errors='ignore')
 	df['abstract'] = [lorem_abstract_generator()]*len(df)
 	df['keywords'] = [random_keywords() for i in range(0,len(df))]
 	print(df.shape)
 
-	# We assume a edition is identified by a city 
-	df2 = df2.filter(['booktitle', 'title', 'key', 'year'])
-
+	# key -> article id in the system (not isbn or doi)
+	# title -> paper title
+	# booktitle -> conference name
+	# year -> to create the relationship and include it as a new instance of Year.
+	df2 = df2.filter(['key','title','booktitle','year'])
 	df2['year'] = pd.to_numeric(df2['year'], errors='ignore')
-	#df2[['city','country']] = df_cities.sample(n=len(df))
-	
-
-	
-
-	print("HEAD:")
-	print(df.head())
-	#print(df2.head())
 
 	df = df.dropna(axis='index')
 	df2 = df2.dropna(axis='index')
 	print("NEW SHAPE:")
 	print(df.shape)
-	#print(df2.shape)
+	print(df2.shape)
+
+	rng = np.random.default_rng()
+	random_indexes = rng.integers(0, len(df_cities), size=len(df2))
+
+	cities = [[],[]]
+	for i in random_indexes:
+		cities[0].append(df_cities['name'].iloc[i])
+		cities[1].append(df_cities['country'].iloc[i])
+
+	df2['city'] = cities[0]
+	df2['country'] = cities[1]
+	# We assume a edition is identified by a the conference name, a city and a year
+	#insert edition
+	df2['edition'] = [str(x) for x in df2['year']]
+	df2['edition'] = df2['booktitle'] + "_" + df2['city'] + "_"+ df2['edition']
+	
+	'''
+	for i in range(len(df2)):
+		index = random_indexes[i]
+		print(index)
+		city = df_cities['name'][index]
+		print(city)
+		df2[i, 'edition'] = df2.loc[i,'booktitle'] + "_" + city + "_"+ df2[i,'edition']
+	'''
+
+	#print("HEAD:")
+	#print(df.head())
+	#print(df2.loc[:,['booktitle','year', 'city','country', 'edition']].head(10))
 
 	# Just for test get only the first 100 rows
 	df = df.head(constant.N_TEST)
 	df2 = df2.head(constant.N_TEST)
 
 	df.to_csv(join(pathOut,'conferences_extracted.csv'), sep=';', encoding='utf8', index=False)
-	#df2.to_csv(join(pathOut,'conferences_extracted.csv'), sep=';', encoding='utf8', index=False)
+	df2.to_csv(join(pathOut,'conferences_extracted2.csv'), sep=';', encoding='utf8', index=False)
 
 
 conferences()
-#getCities()
+#cities = getCities()

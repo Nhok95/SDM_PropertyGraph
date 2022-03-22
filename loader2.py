@@ -69,7 +69,6 @@ class Neo4JLoader2:
                 MERGE (p:Paper { paperID: row.key, title: row.title, abstract: row.abstract})
                 MERGE (y:Year { value: toString(row.year)})
                 MERGE (c)-[pr:PROCEEDING]->(p)
-                SET pr.editionID=row.edition
                 MERGE (c)-[:PUBLISHED]-(y)
                 WITH row, p
                 UNWIND SPLIT(row.keywords, '|') AS keyword
@@ -78,8 +77,52 @@ class Neo4JLoader2:
                 """)
 
             if self.printResult(result):
+                print("Conferences and articles inserted")
+            else:
+                print("Error inserting conferences and articles")
+    
+    def load_authors_articles2(self):
+        print("##########################")
+        print("Inserting conferences and articles 2...")
+        with self.driver.session() as session:
+            result = session.run("""
+                LOAD CSV WITH HEADERS FROM 'file:///conferences_extracted.csv' AS row
+                FIELDTERMINATOR ';'
+                WITH row WHERE row.key IS NOT NULL AND row.title IS NOT NULL
+                MERGE (p:Paper { paperID: row.key, title: row.title, abstract: row.abstract})
+                WITH row, p, SPLIT(row.author, '|') AS author
+                MERGE (s:Scientist { name: author[0]}) 
+                MERGE (p)-[:AUTHOR]->(s)
+                WITH row, p, SPLIT(row.author, '|') AS author
+                UNWIND RANGE(1,SIZE(author)-1) as i
+                MERGE (p)-[:COAUTHOR]->(s:Scientist { name: author[i]}) 
+                """)
+
+            if self.printResult(result):
+                print("Authors for articles inserted")
+            else:
+                print("Error inserting authors for articles")
+
+    def load_conference_cities(self):
+        print("##########################")
+        print("Inserting conference cities...")
+        with self.driver.session() as session:
+            #Edition period?
+            result = session.run("""
+                LOAD CSV WITH HEADERS FROM 'file:///conferences_extracted2.csv' AS row
+                FIELDTERMINATOR ';'
+                WITH row WHERE row.key IS NOT NULL AND row.title IS NOT NULL
+                MERGE (e:Edition { name: row.edition})
+                MERGE (c:Conference { title: row.booktitle})
+                MERGE (y:Year { year:row.year})
+                MERGE (ct:City { city:row.city, country:row.country})
+                MERGE (c)-[:EDITION]-(e)
+                MERGE (e)-[:CELEBRATED_YEAR]-(y)
+                MERGE (e)-[:CELEBRATED_CITY]-(c)
+                """)
+
+            if self.printResult(result):
                 print("Journals and articles inserted")
             else:
                 print("Error inserting journals and articles")
-
         
