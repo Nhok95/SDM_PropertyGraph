@@ -38,7 +38,7 @@ if __name__ == "__main__":
         loader2.load_conference_articles()
         loader2.load_authors_articles2()
         loader2.load_conference_cities()
-        #loader.load_paper_citations()
+        loader.load_paper_citations()
 
     elif args.mode == 'clean':
         print('Cleaning graph...')

@@ -69,7 +69,6 @@ class Neo4JLoader2:
                 MERGE (p:Paper { paperID: row.key, title: row.title, abstract: row.abstract})
                 MERGE (y:Year { value: toString(row.year)})
                 MERGE (c)-[pr:PROCEEDING]->(p)
-                MERGE (c)-[:PUBLISHED]-(y)
                 WITH row, p
                 UNWIND SPLIT(row.keywords, '|') AS keyword
                 MERGE (k:Keyword { topic: keyword})
@@ -118,11 +117,11 @@ class Neo4JLoader2:
                 MERGE (ct:City { city:row.city, country:row.country})
                 MERGE (c)-[:EDITION]-(e)
                 MERGE (e)-[:CELEBRATED_YEAR]-(y)
-                MERGE (e)-[:CELEBRATED_CITY]-(c)
+                MERGE (e)-[:CELEBRATED_CITY]-(ct)
                 """)
 
             if self.printResult(result):
-                print("Journals and articles inserted")
+                print("Conference cities inserted")
             else:
-                print("Error inserting journals and articles")
+                print("Error inserting conference cities")
         
