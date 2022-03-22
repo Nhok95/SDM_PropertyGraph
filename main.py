@@ -32,13 +32,16 @@ if __name__ == "__main__":
 
     if args.mode == 'load':
         print('Start bulk Loading...')
-        #loader.load_authors()
-        #loader.load_journals_articles()
-        #loader.load_authors_articles()
+        loader.load_journals_articles()
+        loader.load_authors_articles()
+
         loader2.load_conference_articles()
         loader2.load_authors_articles2()
         loader2.load_conference_cities()
+        
+        loader.load_article_reviews()
         loader.load_paper_citations()
+        loader.load_organizations()
 
     elif args.mode == 'clean':
         print('Cleaning graph...')
