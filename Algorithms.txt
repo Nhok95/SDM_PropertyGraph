@@ -2,25 +2,59 @@ Visualize the graph chema
 --------------------------------
 CALL db.schema.visualization()
 
+PageRank
+########################################
 
 Create Graph
 --------------------------------
 CALL gds.graph.create('paper-citations','Paper', 'CITES')
 
-
 Drop Graph
 --------------------------------
 CALL gds.graph.drop('paper-citations')
 
-
-PageRank
+Top 10
 --------------------------------
-# TOP 10
-CALL gds.pageRank.stream('paper-citations') YIELD nodeId, score
+CALL gds.pageRank.stream('paper-citations') 
+YIELD nodeId, score
 RETURN gds.util.asNode(nodeId).title AS title, score
 ORDER BY score DESC LIMIT 10
 
-# BOTTOM 10
-CALL gds.pageRank.stream('paper-citations') YIELD nodeId, score
+Bottom 10
+--------------------------------
+CALL gds.pageRank.stream('paper-citations') 
+YIELD nodeId, score
 RETURN gds.util.asNode(nodeId).title AS title, score
 ORDER BY score ASC LIMIT 10
+
+
+Node Similarity
+########################################
+
+Create Graph
+--------------------------------
+CALL gds.graph.create('paper-keyword',
+    ['Paper', 'Keyword'], {
+        TOPIC: {
+            type: 'TOPIC'
+        }
+    } 
+);
+
+Drop Graph
+--------------------------------
+CALL gds.graph.drop('paper-keyword')
+
+Top 10
+--------------------------------
+CALL gds.nodeSimilarity.stream('paper-keyword') 
+YIELD node1, node2, similarity
+RETURN gds.util.asNode(node1).title AS Paper1, gds.util.asNode(node2).title AS Paper2, similarity
+ORDER BY similarity DESC, Paper1, Paper2 LIMIT 10
+
+Bottom 10
+--------------------------------
+CALL gds.nodeSimilarity.stream('paper-keyword') 
+YIELD node1, node2, similarity
+RETURN gds.util.asNode(node1).title AS Paper1, gds.util.asNode(node2).title AS Paper2, similarity
+ORDER BY similarity ASC, Paper1, Paper2 LIMIT 10
