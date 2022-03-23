@@ -15,6 +15,12 @@ CALL gds.graph.drop('paper-citations')
 
 PageRank
 --------------------------------
+# TOP 10
 CALL gds.pageRank.stream('paper-citations') YIELD nodeId, score
 RETURN gds.util.asNode(nodeId).title AS title, score
 ORDER BY score DESC LIMIT 10
+
+# BOTTOM 10
+CALL gds.pageRank.stream('paper-citations') YIELD nodeId, score
+RETURN gds.util.asNode(nodeId).title AS title, score
+ORDER BY score ASC LIMIT 10
