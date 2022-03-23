@@ -1,0 +1,25 @@
+# Return total papers of every journal/conference
+MATCH (n)-[:PROCEEDING|:VOLUME]->(p:Paper)
+RETURN n.title AS title, collect(p) As papers, count(p.title) AS total
+ORDER BY title
+
+MATCH (n)-[:PROCEEDING|:VOLUME]->(p:Paper)
+WITH n, count(p.title) AS total
+MATCH (n)-[:PROCEEDING|:VOLUME]->(p:Paper)-->(k:Keyword)
+WHERE k.topic IN ["Data Management", "Indexing", "Data Modeling", "Big Data", "Data Processing", "Data Storage", "Data Querying"]
+WITH n.title AS title, collect(k) AS keywords, count(p.title) AS ComPapers, total
+WHERE toFloat(ComPapers/total) >= 0.1 
+RETURN title, toFloat(ComPapers/total), ComPapers, total 
+ORDER BY title
+
+
+DEF  
+-----
+MATCH (n)-[:PROCEEDING|:VOLUME]->(p:Paper)
+WITH n.title AS Title, count(p.title) AS TotalPapers
+MATCH (n2)-[:PROCEEDING|:VOLUME]->(p2:Paper)-->(k:Keyword)
+WHERE k.topic IN ["Data Management", "Indexing", "Data Modeling", "Big Data", "Data Processing", "Data Storage", "Data Querying"]
+WITH n2.title AS Title2, Title, count(p2.title) AS ComPapers, TotalPapers
+WHERE Title2 = Title AND toFloat(toFloat(ComPapers)/toFloat(TotalPapers)) >= 0.4 
+RETURN Title, toFloat(toFloat(ComPapers)/toFloat(TotalPapers)), ComPapers, TotalPapers
+ORDER BY TotalPapers DESC Limit 15
