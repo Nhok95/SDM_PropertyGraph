@@ -29,16 +29,24 @@ if __name__ == "__main__":
 
     if args.mode == 'load':
         print('Start bulk Loading...')
+        ## Journals ##
         loader.load_journals_articles()
-        loader.load_authors_articles()
+        loader.load_journals_authors_articles()
 
+        ## Conferences ##
         loader.load_conference_articles()
-        loader.load_authors_articles2()
+        loader.load_conference_authors_articles()
         loader.load_conference_cities()
-        
+
+        ## Reviews ##
         loader.load_article_reviews()
-        loader.load_paper_citations()
+        
+        ## Organizations ##
         loader.load_organizations()
+
+        ## Cites ##
+        loader.load_paper_citations()
+        
 
     elif args.mode == 'clean':
         print('Cleaning graph...')
