@@ -1,10 +1,6 @@
-<<<<<<< HEAD
-Query 1 (comprobada con el caso de la conferencia ACC, usar utilities para mejor comprobacion)
-=======
 Query 1 
 [Find the top 3 most cited papers of each conference.]
 (comprobada con el caso de la conferencia ACC, usar utilities para mejor comprobacion)
->>>>>>> b46d0a0c4340f241c0c7401aff2253c7a06c9b47
 -------
 MATCH (c:Conference)-->(p:Paper)<--(p2:Paper)
 WITH c.title AS Conf, p as Paper, count(p2) AS Citations
@@ -13,10 +9,6 @@ WITH Conf, collect(Paper.title) AS top
 RETURN Conf, top[..3] 
 ORDER BY Conf ASC 
 
-<<<<<<< HEAD
-
-Query 2 (comprobada con un caso de que las ediciones fueran 2 en vez de 4 ya que no hay este ultimo caso, usar utilities para mejor visualización)
-=======
 RESULT:
 ╒══════════════════════════════════════════════════════╤══════════════════════════════════════════════════════════════════════╕
 │"Conf"                                                │"top[..3]"                                                            │
@@ -40,17 +32,12 @@ Query 2
 [For each conference find its community: i.e., those authors that have published papers on that conference in,
  at least, 4 different editions.]
 (comprobada con un caso de que las ediciones fueran 2 en vez de 4 ya que no hay este ultimo caso, usar utilities para mejor visualización)
->>>>>>> b46d0a0c4340f241c0c7401aff2253c7a06c9b47
 -------
 MATCH (c:Conference)-->(p:Paper)-[:AUTHOR]->(s:Scientist) 
 WITH c, s, count(c) AS Editions
 WHERE Editions >= 4
 RETURN c.title, collect(s.name) AS Community
 
-<<<<<<< HEAD
-
-Query 3
-=======
 RESULT:
 ╒═════════════╤═════════════════════════════════════════════════════════════════╕
 │"c.title"    │"Community"                                                      │
@@ -69,15 +56,12 @@ RESULT:
 
 Query 3
 [Find the impact factors of the journals in your graph]
->>>>>>> b46d0a0c4340f241c0c7401aff2253c7a06c9b47
 --------
 MATCH (j:Journal)-->(p:Paper)<--(c:Paper)
 WITH j, p, count(c) AS Citations
 WHERE toInteger(j.year) IN [date().year-1,date().year-2]
 RETURN j.title, SUM(Citations)/count(p) AS IF
 
-<<<<<<< HEAD
-=======
 MATCH (j:Journal)-->(p:Paper)<--(c:Paper)
 WHERE toInteger(j.year) = 2021
 WITH j, p, count(c) AS citations
@@ -100,7 +84,6 @@ CASE WHEN Citations[it] <= (it+1)
 END AS HI
 RETURN Author, max(HI) AS HIndex
 ORDER BY HIndex, Author DESC
->>>>>>> b46d0a0c4340f241c0c7401aff2253c7a06c9b47
 
 
 
@@ -113,9 +96,6 @@ Query 1
    MATCH (c:Conference)-[:PROCEEDING]->(p:Paper)<-[:CITES]-(p2:Paper) 
    WITH c.title AS Conf, p.title as Paper, count(p2) AS Citations
    RETURN Conf, Paper, Citations
-<<<<<<< HEAD
-   ORDER BY Conf ASC
-=======
    ORDER BY Citations DESC
 
   Example:
@@ -137,7 +117,6 @@ Query 1
   │      │n Case."                                                              │           │
   └──────┴──────────────────────────────────────────────────────────────────────┴───────────┘
   
->>>>>>> b46d0a0c4340f241c0c7401aff2253c7a06c9b47
 
 Query 2
  * Saca el numero de ediciones de conferencias en las que un autor tiene paper
@@ -145,9 +124,6 @@ Query 2
    MATCH (c:Conference)-->(p:Paper)-[:AUTHOR]->(s:Scientist) 
    WITH c, s, count(c) AS Editions
    ORDER BY Editions DESC
-<<<<<<< HEAD
-   RETURN c.title,c s.name, Editions 
-=======
    RETURN c.title,c s.name, Editions 
 
    Example:
@@ -165,4 +141,3 @@ Query 2
   ├─────────┼───────────────────┼──────────┤
   │"WAPA"   │"John Shawe-Taylor"│2         │
   └─────────┴───────────────────┴──────────┘
->>>>>>> b46d0a0c4340f241c0c7401aff2253c7a06c9b47
