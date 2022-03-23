@@ -253,8 +253,8 @@ class Neo4JLoader:
                 MATCH (p:Paper)
                 WITH p
                 MATCH (c:Paper) 
-                WHERE p <> c AND rand() < 0.1
-                MERGE (p)-[:CITES]->(c)
+                WHERE p <> c AND rand() < 0.05
+                CREATE (p)-[:CITES]->(c)
             """)
         
             if self.printResult(result):

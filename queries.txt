@@ -1,4 +1,6 @@
-Query 1 (comprobada con el caso de la conferencia ACC, usar utilities para mejor comprobacion)
+Query 1 
+[Find the top 3 most cited papers of each conference.]
+(comprobada con el caso de la conferencia ACC, usar utilities para mejor comprobacion)
 -------
 MATCH (c:Conference)-->(p:Paper)<--(p2:Paper)
 WITH c.title AS Conf, p as Paper, count(p2) AS Citations
@@ -7,21 +9,69 @@ WITH Conf, collect(Paper.title) AS top
 RETURN Conf, top[..3] 
 ORDER BY Conf ASC 
 
+RESULT:
+╒══════════════════════════════════════════════════════╤══════════════════════════════════════════════════════════════════════╕
+│"Conf"                                                │"top[..3]"                                                            │
+╞══════════════════════════════════════════════════════╪══════════════════════════════════════════════════════════════════════╡
+│"ACML"                                                │["Mapping kernels for infinite mapping systems.","Bayesian inference f│
+│                                                      │or statistical abduction using Markov chain Monte Carlo.","A Note on M│
+│                                                      │etric Properties for Some Divergence Measures: The Gaussian Case."]   │
+├──────────────────────────────────────────────────────┼──────────────────────────────────────────────────────────────────────┤
+│"AISTATS"                                             │["Consistency and Rates for Clustering with DBSCAN.","Efficient Gaussi│
+│                                                      │an Process Inference for Short-Scale Spatio-Temporal Modeling.","On Es│
+│                                                      │timation and Selection for Topic Models."]                            │
+├──────────────────────────────────────────────────────┼──────────────────────────────────────────────────────────────────────┤
+│"ANT/MobiWIS"                                         │["Secure Web Service Clients on Mobile Devices.","A Multi-Criteria App│
+│                                                      │roach for Web Service Discovery.","Monitoring Winter Ice Conditions Us│
+│                                                      │ing Thermal Imaging Cameras Equipped with Infrared Microbolometer Sens│
+│                                                      │ors."]                                                                │
+└──────────────────────────────────────────────────────┴──────────────────────────────────────────────────────────────────────┴
 
-Query 2 (comprobada con un caso de que las ediciones fueran 2 en vez de 4 ya que no hay este ultimo caso, usar utilities para mejor visualización)
+
+Query 2 
+[For each conference find its community: i.e., those authors that have published papers on that conference in,
+ at least, 4 different editions.]
+(comprobada con un caso de que las ediciones fueran 2 en vez de 4 ya que no hay este ultimo caso, usar utilities para mejor visualización)
 -------
 MATCH (c:Conference)-->(p:Paper)-[:AUTHOR]->(s:Scientist) 
 WITH c, s, count(c) AS Editions
 WHERE Editions >= 4
 RETURN c.title, collect(s.name) AS Community
 
+RESULT:
+╒═════════════╤═════════════════════════════════════════════════════════════════╕
+│"c.title"    │"Community"                                                      │
+╞═════════════╪═════════════════════════════════════════════════════════════════╡
+│"WAPA"       │["Albert Bifet"]                                                 │
+├─────────────┼─────────────────────────────────────────────────────────────────┤
+│"WRLA"       │["José Meseguer"]                                                │
+├─────────────┼─────────────────────────────────────────────────────────────────┤
+│"ICCS"       │["Anna T. Lawniczak","Leifur Þ. Leifsson","Adrian Sandu"]        │
+├─────────────┼─────────────────────────────────────────────────────────────────┤
+│"ANT/MobiWIS"│["Elhadi M. Shakshuki"]                                          │
+├─────────────┼─────────────────────────────────────────────────────────────────┤
+│"WCIT"       │["Adem Karahoca","Farideh Hamidi","Mehrak Rahimi","Hamid Tohidi"]│
+└─────────────┴─────────────────────────────────────────────────────────────────┘
+
 
 Query 3
+[Find the impact factors of the journals in your graph]
 --------
 MATCH (j:Journal)-->(p:Paper)<--(c:Paper)
 WITH j, p, count(c) AS Citations
 WHERE toInteger(j.year) IN [date().year-1,date().year-2]
 RETURN j.title, SUM(Citations)/count(p) AS IF
+
+MATCH (j:Journal)-->(p:Paper)<--(c:Paper)
+WHERE toInteger(j.year) = 2021
+WITH j, p, count(c) AS citations
+WHERE toInteger(j.year) IN [2020,1999]
+WITH j.title as title, count(p) as publications, citations
+RETURN title, citations/publications as IF
+
+Query 4
+[Find the h-indexes of the authors in your graph]
+--------
 
 
 
@@ -35,7 +85,27 @@ Query 1
    MATCH (c:Conference)-[:PROCEEDING]->(p:Paper)<-[:CITES]-(p2:Paper) 
    WITH c.title AS Conf, p.title as Paper, count(p2) AS Citations
    RETURN Conf, Paper, Citations
-   ORDER BY Conf ASC
+   ORDER BY Citations DESC
+
+  Example:
+  MATCH (c:Conference {title:"ACML"})-[:PROCEEDING]->(p:Paper)<-[:CITES]-(p2:Paper) 
+  WITH c.title AS Conf, p.title as Paper, count(p2) AS Citations 
+  RETURN Conf, Paper, Citations 
+  ORDER BY Citations DESC
+
+  Result:
+  ╒══════╤══════════════════════════════════════════════════════════════════════╤═══════════╕
+  │"Conf"│"Paper"                                                               │"Citations"│
+  ╞══════╪══════════════════════════════════════════════════════════════════════╪═══════════╡
+  │"ACML"│"Mapping kernels for infinite mapping systems."                       │739        │
+  ├──────┼──────────────────────────────────────────────────────────────────────┼───────────┤
+  │"ACML"│"Bayesian inference for statistical abduction using Markov chain Monte│739        │
+  │      │ Carlo."                                                              │           │
+  ├──────┼──────────────────────────────────────────────────────────────────────┼───────────┤
+  │"ACML"│"A Note on Metric Properties for Some Divergence Measures: The Gaussia│739        │
+  │      │n Case."                                                              │           │
+  └──────┴──────────────────────────────────────────────────────────────────────┴───────────┘
+  
 
 Query 2
  * Saca el numero de ediciones de conferencias en las que un autor tiene paper
@@ -44,3 +114,19 @@ Query 2
    WITH c, s, count(c) AS Editions
    ORDER BY Editions DESC
    RETURN c.title,c s.name, Editions 
+
+   Example:
+   MATCH (c:Conference {title:"WAPA"})-->(p:Paper)-[:AUTHOR]->(s:Scientist) 
+   WITH c, s, count(c) AS Editions
+   WHERE Editions > 1
+   RETURN c.title, s.name, Editions
+   ORDER BY Editions DESC
+   
+   Result:
+  ╒═════════╤═══════════════════╤══════════╕
+  │"c.title"│"s.name"           │"Editions"│
+  ╞═════════╪═══════════════════╪══════════╡
+  │"WAPA"   │"Albert Bifet"     │4         │
+  ├─────────┼───────────────────┼──────────┤
+  │"WAPA"   │"John Shawe-Taylor"│2         │
+  └─────────┴───────────────────┴──────────┘
