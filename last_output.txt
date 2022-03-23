@@ -54,7 +54,7 @@ Organizations inserted (from conferences)
 ##########################
 Inserting citations for papers...
 ----------------------
-Created 531266 relationships. 
+Created 133935 relationships.
 ----------------------
 Citations for papers inserted
 ##########################

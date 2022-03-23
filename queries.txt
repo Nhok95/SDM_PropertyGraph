@@ -62,12 +62,12 @@ WITH j, p, count(c) AS Citations
 WHERE toInteger(j.year) IN [date().year-1,date().year-2]
 RETURN j.title, SUM(Citations)/count(p) AS IF
 
-MATCH (j:Journal)-->(p:Paper)<--(c:Paper)
-WHERE toInteger(j.year) = 2021
-WITH j, p, count(c) AS citations
-WHERE toInteger(j.year) IN [2020,1999]
-WITH j.title as title, count(p) as publications, citations
-RETURN title, citations/publications as IF
+MATCH (j:Journal)-->(p:Paper)<-[:CITES]-(p2:Paper)
+WITH j.title as title, j.year as year, p, p2
+WHERE toInteger(year) IN [2020,2019]
+WITH title, year, count(p) as publications, count(p2) as citations
+RETURN title, sum(citations)/sum(publications) as ImpactFactor
+
 
 Query 4
 [Find the h-indexes of the authors in your graph]
