@@ -1,0 +1,49 @@
+2- Community
+-------------
+MATCH (n)-[:PROCEEDING|:VOLUME]->(p:Paper)
+WITH n.title AS Title, count(p.title) AS TotalPapers
+MATCH (n2)-[:PROCEEDING|:VOLUME]->(p2:Paper)-->(k:Keyword)
+WHERE k.topic IN ["Data Management", "Indexing", "Data Modeling", "Big Data", "Data Processing", "Data Storage", "Data Querying"]
+WITH n2.title AS Title2, Title, count(p2.title) AS ComPapers, TotalPapers, collect(p2.title) AS Papers
+WHERE Title2 = Title AND toFloat(toFloat(ComPapers)/toFloat(TotalPapers)) >= 0.9
+RETURN Title, Papers
+ORDER BY Title ASC
+
+
+Debug Version
+**************
+MATCH (n)-[:PROCEEDING|:VOLUME]->(p:Paper)
+WITH n.title AS Title, count(p.title) AS TotalPapers
+MATCH (n2)-[:PROCEEDING|:VOLUME]->(p2:Paper)-->(k:Keyword)
+WHERE k.topic IN ["Data Management", "Indexing", "Data Modeling", "Big Data", "Data Processing", "Data Storage", "Data Querying"]
+WITH n2.title AS Title2, Title, count(p2.title) AS ComPapers, TotalPapers, collect(p2.title) AS Papers
+WHERE Title2 = Title AND toFloat(toFloat(ComPapers)/toFloat(TotalPapers)) >= 0.9
+RETURN Title, toFloat(toFloat(ComPapers)/toFloat(TotalPapers)), ComPapers, TotalPapers, Papers, size(Papers)
+ORDER BY TotalPapers DESC LIMIT 15
+
+
+3- Top100
+----------
+
+CALL gds.graph.create.cypher(
+	'myGraph',
+	'MATCH (n:Paper) RETURN id(n) AS id',
+	'MATCH (n:Paper)-[:CITES]->(m:Paper)
+	WHERE n.title IN [ListComPapers] AND m.title IN [ListComPapers]
+	RETURN id(n) AS source, id(m) AS target'
+)
+
+CALL gds.pageRank.stream('Paper')
+YIELD nodeID, score
+WITH gds.util.asNode(nodeId).title AS Title, score
+RETURN Title, score
+ORDER BY score DESC LIMIT 100
+
+
+
+4- Gurus
+---------  
+MATCH (s:Scientist)-[:AUTHOR*2..]->(p:Paper)
+WHERE p.title IN [Top100]
+WITH s.name as Guru, p
+RETURN Guru
