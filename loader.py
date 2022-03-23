@@ -56,7 +56,52 @@ class Neo4JLoader:
         print("----------------------")
         
         return True
-        
+    
+    ### TRANSACTION FUNCTIONS ###
+    @classmethod
+    def author_transaction(cls, tx, file):
+        return tx.run("""
+            LOAD CSV WITH HEADERS FROM $file AS row
+            FIELDTERMINATOR ';'
+            WITH row WHERE row.key IS NOT NULL AND row.title IS NOT NULL
+            MERGE (p:Paper { paperID: row.key, title: row.title, abstract: row.abstract})
+            WITH row, p, SPLIT(row.author, '|') AS author
+            MERGE (s:Scientist { name: author[0]}) 
+            MERGE (p)-[:AUTHOR]->(s)
+            WITH row, p, SPLIT(row.author, '|') AS author
+            UNWIND RANGE(1,SIZE(author)-1) as i
+            MERGE (p)-[:COAUTHOR]->(s:Scientist { name: author[i]}) 
+            """, file=file)
+
+    @classmethod
+    def review_transaction(cls, tx, file):
+        return tx.run("""
+            LOAD CSV WITH HEADERS FROM $file AS row
+            FIELDTERMINATOR ';'
+            MATCH (p:Paper { paperID: row.key, title: row.title, abstract: row.abstract})
+            WITH row, p
+            UNWIND SPLIT(row.reviewers, '|') AS reviewer
+            MATCH (s:Scientist { name: reviewer})
+            CREATE (p)<-[r:REVIEWS]-(s)
+            SET r.text=row.review, r.decision=row.decision
+            """, file=file)
+    
+    @classmethod
+    def organization_transaction(cls, tx, file):
+        return tx.run("""
+            LOAD CSV WITH HEADERS FROM $file AS row
+            FIELDTERMINATOR ';'
+            WITH row WHERE row.key IS NOT NULL AND row.title IS NOT NULL
+            MERGE (o:Organization { name:row.organization, type:row.type})
+            WITH row, o
+            UNWIND SPLIT(row.author, '|') AS author
+            MATCH (s:Scientist { name: author})
+            CREATE (s)-[:AFFILIATED]->(o)
+            """, file=file)
+
+    ### LOAD FUNCTIONS ###
+
+    ## Journals ##
     def load_journals_articles(self):
         print("##########################")
         print("Inserting journals and articles...")
@@ -82,75 +127,20 @@ class Neo4JLoader:
             else:
                 print("Error inserting journals and articles")
 
-    def load_authors_articles(self):
+    def load_journals_authors_articles(self):
         print("##########################")
-        print("Inserting authors for articles")
+        print("Inserting authors for articles (journals)...")
         with self.driver.session() as session:
-            result = session.run("""
-                LOAD CSV WITH HEADERS FROM 'file:///journals_extracted.csv' AS row
-                FIELDTERMINATOR ';'
-                WITH row WHERE row.key IS NOT NULL AND row.title IS NOT NULL
-                MERGE (p:Paper { paperID: row.key, title: row.title, abstract: row.abstract})
-                WITH row, p, SPLIT(row.author, '|') AS author 
-                MERGE (s:Scientist { name: author[0]})
-                MERGE (p)-[:AUTHOR]->(s) 
-                WITH row, p, SPLIT(row.author, '|') AS author 
-                UNWIND RANGE(1,SIZE(author)-1) as i
-                MERGE (p)-[:COAUTHOR]->(s:Scientist { name: author[i]})
-                """)
+            result = session.write_transaction(self.author_transaction, 'file:///journals_extracted.csv')
         
             if self.printResult(result):
-                print("Authors for articles inserted")
+                print("Authors for articles inserted (from Journals)")
             else:
-                print("Error inserting authors for articles")
+                print("Error inserting authors for articles") 
 
-    def load_paper_citations(self):
-        print("##########################")
-        print("Inserting citations for papers")
-        with self.driver.session() as session:
-            result = session.run("""
-                MATCH (p:Paper)
-                WITH p
-                MATCH (c:Paper) 
-                WHERE p <> c AND rand() < 0.1
-                MERGE (p)-[:CITES]->(c)
-            """)
-        
-            if self.printResult(result):
-                print("Citations for papers inserted")
-            else:
-                print("Error inserting authors for articles")
+    #############
 
-    def load_organizations(self):
-        print("Inserting organizations")
-        with self.driver.session() as session:
-            session.run("""
-                LOAD CSV WITH HEADERS FROM 'file:///journals_extracted.csv' AS row
-                FIELDTERMINATOR ';'
-                WITH row
-                MERGE (o:Organization { name:row.organization, type:row.type})
-                WITH row, o
-                UNWIND SPLIT(row.author, '|') AS author
-                MATCH (s:Scientist { name: author})
-                CREATE (s)-[:AFFILIATED]->(o)
-                """)
-        print("Organizations inserted")
-
-    def load_article_reviews(self):
-        print("Inserting article reviews")
-        with self.driver.session() as session:
-            session.run("""
-                LOAD CSV WITH HEADERS FROM 'file:///journals_extracted.csv' AS row
-                FIELDTERMINATOR ';'
-                MATCH (p:Paper { paperID: row.key, title: row.title, abstract: row.abstract})
-                WITH row, p
-                UNWIND SPLIT(row.reviewers, '|') AS reviewer
-                MATCH (s:Scientist { name: reviewer})
-                CREATE (p)<-[r:REVIEWS]-(s)
-                SET r.text=row.review, r.decision=row.decision
-                """)
-        print("Article reviews inserted")
-
+    ## Conferences ##
     def load_conference_articles(self):
         print("##########################")
         print("Inserting conferences and articles...")
@@ -174,25 +164,14 @@ class Neo4JLoader:
             else:
                 print("Error inserting conferences and articles")
 
-    def load_authors_articles2(self):
+    def load_conference_authors_articles(self):
         print("##########################")
-        print("Inserting conferences and articles 2...")
+        print("Inserting authors for articles (conferences)...")
         with self.driver.session() as session:
-            result = session.run("""
-                LOAD CSV WITH HEADERS FROM 'file:///conferences_extracted.csv' AS row
-                FIELDTERMINATOR ';'
-                WITH row WHERE row.key IS NOT NULL AND row.title IS NOT NULL
-                MERGE (p:Paper { paperID: row.key, title: row.title, abstract: row.abstract})
-                WITH row, p, SPLIT(row.author, '|') AS author
-                MERGE (s:Scientist { name: author[0]}) 
-                MERGE (p)-[:AUTHOR]->(s)
-                WITH row, p, SPLIT(row.author, '|') AS author
-                UNWIND RANGE(1,SIZE(author)-1) as i
-                MERGE (p)-[:COAUTHOR]->(s:Scientist { name: author[i]}) 
-                """)
+            result = session.write_transaction(self.author_transaction, 'file:///conferences_extracted.csv')
 
             if self.printResult(result):
-                print("Authors for articles inserted")
+                print("Authors for articles inserted (from Conferences)")
             else:
                 print("Error inserting authors for articles")
 
@@ -200,25 +179,92 @@ class Neo4JLoader:
         print("##########################")
         print("Inserting conference cities...")
         with self.driver.session() as session:
-            #Edition period?
             result = session.run("""
                 LOAD CSV WITH HEADERS FROM 'file:///conferences_extracted2.csv' AS row
                 FIELDTERMINATOR ';'
-                WITH row WHERE row.key IS NOT NULL AND row.title IS NOT NULL
-                MERGE (e:Edition { name: row.edition})
-                MERGE (c:Conference { title: row.booktitle})
+                WITH row WHERE row.booktitle IS NOT NULL
+                MERGE (c:Conference { title: row.booktitle, year:row.year})
                 MERGE (y:Year { year:row.year})
-                MERGE (ct:City { city:row.city, country:row.country})
-                MERGE (c)-[:EDITION]-(e)
-                MERGE (e)-[:CELEBRATED_YEAR]-(y)
-                MERGE (e)-[:CELEBRATED_CITY]-(ct)
+                MERGE (ct:City { cityName:row.city, country:row.country})
+                MERGE (c)-[:CELEBRATED_YEAR]-(y)
+                MERGE (c)-[:CELEBRATED_CITY]-(ct)
+                WITH row, c
+                SET c.edition = row.edition
                 """)
 
             if self.printResult(result):
                 print("Conference cities inserted")
             else:
                 print("Error inserting conference cities")
+    
+    #############
 
+    ## Reviews ##
+    def load_article_reviews(self):
+        print("##########################")
+        print("Inserting reviews...")
+        with self.driver.session() as session_a:
+            result = session_a.write_transaction(self.review_transaction, 'file:///journals_extracted.csv')
+
+            if self.printResult(result):
+                print("Article reviews inserted (from Journals)")
+            else:
+                print("Error inserting article reviews")
+
+        with self.driver.session() as session_b:
+            result = session_b.write_transaction(self.review_transaction, 'file:///conferences_extracted.csv')
+
+            if self.printResult(result):
+                print("Article reviews inserted (from Conferences)")
+            else:
+                print("Error inserting article reviews")
+
+    #############
+
+    ## Organizations ##
+    def load_organizations(self):
+        print("##########################")
+        print("Inserting organizations...")
+        with self.driver.session() as session_a:
+            result = session_a.write_transaction(self.organization_transaction, 'file:///journals_extracted.csv')
+            
+            if self.printResult(result):
+                print("Organizations inserted (from Journals)")
+            else:
+                print("Error inserting organizations")
+        
+        with self.driver.session() as session_b:
+            result = session_b.write_transaction(self.organization_transaction, 'file:///conferences_extracted.csv')
+
+            if self.printResult(result):
+                print("Organizations inserted (from Conferences)")
+            else:
+                print("Error inserting organizations")
+
+
+    #############
+
+    ## Cites ##
+    def load_paper_citations(self):
+        print("##########################")
+        print("Inserting citations for papers...")
+        with self.driver.session() as session:
+            result = session.run("""
+                MATCH (p:Paper)
+                WITH p
+                MATCH (c:Paper) 
+                WHERE p <> c AND rand() < 0.1
+                MERGE (p)-[:CITES]->(c)
+            """)
+        
+            if self.printResult(result):
+                print("Citations for papers inserted")
+            else:
+                print("Error inserting citations")
+
+    #############
+
+    ## Clean BD ##
     def clean_all(self):
         print("##########################")
         print("Cleaning database...")
@@ -240,6 +286,5 @@ class Neo4JLoader:
                 print("Database cleaned")
             else:
                 print("Error cleaning the database")
-        
-
-        
+    
+    #############

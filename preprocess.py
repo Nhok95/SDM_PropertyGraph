@@ -22,15 +22,16 @@ def cleanDF(df):
     columns = []
 
     for col in list(df.columns):
-        print(col)
+        #print(col)
         #col = re.sub('(:[a-z]*)','',col) 
         col = re.sub('(:(?=[a-z]))[a-z\[\]]*', '', col)
         col = re.sub('[a-z]*:', '', col)
-        print(col)
+        #print(col)
         columns.append(col)
     
     df.columns = columns
-    df = df.dropna(axis='index', how='all')
+    df.dropna(axis='columns', how='all', inplace=True)
+    df.dropna(axis='index', how='all', inplace=True)
 
     print("shape: {}".format(df.shape))
 
@@ -62,8 +63,6 @@ for file,header in zip(list1,list2):
 
     df = pd.read_csv(join(path, file), sep=';', encoding='utf8',
                 names=header, low_memory=False, nrows=constant.N)
-    
-    # conferences
 
     df_cleaned = cleanDF(df)
     df_cleaned.to_csv(join(pathClean, file), sep=';', encoding='utf8', index=False)

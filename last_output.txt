@@ -1,0 +1,61 @@
+$ py main.py
+auth: None
+Start bulk Loading...
+##########################
+Inserting journals and articles...
+----------------------
+Added 3524 labels. Created 3524 nodes. Created 10366 relationships. Set 13901 properties. 
+----------------------
+Journals and articles inserted
+##########################
+Inserting authors for articles (journals)...
+----------------------
+Added 6178 labels. Created 6178 nodes. Created 7199 relationships. Set 6178 properties. 
+----------------------
+Authors for articles inserted (from Articles)
+##########################
+Inserting conferences and articles...
+----------------------
+Added 4147 labels. Created 4147 nodes. Created 11967 relationships. Set 12283 properties. 
+----------------------
+Conferences and articles inserted
+##########################
+Inserting authors for articles (conferences)...
+----------------------
+Added 10063 labels. Created 10063 nodes. Created 11036 relationships. Set 10063 properties. 
+----------------------
+Authors for articles inserted (from Conferences)
+##########################
+Inserting conference cities...
+----------------------
+Added 4112 labels. Created 4112 nodes. Created 8000 relationships. Set 12175 properties. 
+----------------------
+Conference cities inserted
+##########################
+Inserting reviews...
+----------------------
+Created 13319 relationships. Set 26638 properties. 
+----------------------
+Article reviews inserted (from Journals)
+----------------------
+Created 15508 relationships. Set 31016 properties. 
+----------------------
+Article reviews inserted (from Conferences)
+##########################
+Inserting organizations...
+----------------------
+Added 1523 labels. Created 1523 nodes. Created 14479 relationships. Set 3046 properties. 
+----------------------
+Organizations inserted (from journals)
+----------------------
+Added 2 labels. Created 2 nodes. Created 20918 relationships. Set 4 properties. 
+----------------------
+Organizations inserted (from conferences)
+##########################
+Inserting citations for papers...
+----------------------
+Created 531266 relationships. 
+----------------------
+Citations for papers inserted
+##########################
+Connection closed
