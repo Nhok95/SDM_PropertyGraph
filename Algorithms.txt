@@ -41,6 +41,7 @@ CALL gds.graph.create('paper-keyword',
     } 
 );
 
+
 Drop Graph
 --------------------------------
 CALL gds.graph.drop('paper-keyword')
@@ -58,3 +59,50 @@ CALL gds.nodeSimilarity.stream('paper-keyword')
 YIELD node1, node2, similarity
 RETURN gds.util.asNode(node1).title AS Paper1, gds.util.asNode(node2).title AS Paper2, similarity
 ORDER BY similarity ASC, Paper1, Paper2 LIMIT 10
+
+Louvain
+########################################
+
+Create Graph
+--------------------------------
+CALL gds.graph.create(
+    'myGraph',
+    'Paper',
+    {
+        CITES: {
+            orientation: 'NATURAL'
+        }
+    }
+)
+
+
+Drop Graph
+--------------------------------
+CALL gds.graph.drop('myGraph')
+
+
+Result
+--------------------------------
+CALL gds.louvain.stream('myGraph',
+    {
+        maxLevels:1,
+        maxIterations:20,
+        tolerance:0.001,
+        includeIntermediateCommunities:TRUE
+    }
+)
+YIELD nodeId, communityId, intermediateCommunityIds
+RETURN gds.util.asNode(nodeId).title AS title, communityId, intermediateCommunityIds
+ORDER BY title ASC
+
+
+CALL gds.louvain.stats('myGraph',
+    {
+        maxLevels:10,
+        maxIterations:10,
+        tolerance:0.001,
+        includeIntermediateCommunities:TRUE
+    }
+)
+YIELD communityCount
+
