@@ -43,7 +43,7 @@ def TOP100DBPapers():
 		#print(dbpapers)
 
 		top = session.run("""
-			CALL gds.pageRank.stream('myGraph', {maxIterations:5})
+			CALL gds.pageRank.stream('myGraph', {maxIterations:1})
 			YIELD nodeId, score
 			WITH gds.util.asNode(nodeId).title AS Title, score
 			WHERE Title IN $papers
