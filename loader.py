@@ -66,11 +66,11 @@ class Neo4JLoader:
             WITH row WHERE row.key IS NOT NULL AND row.title IS NOT NULL
             MERGE (p:Paper { paperID: row.key, title: row.title, abstract: row.abstract})
             WITH row, p, SPLIT(row.author, '|') AS author
-            MERGE (s:Scientist { name: author[0]}) 
-            MERGE (p)-[:AUTHOR]->(s)
+            MERGE (r:Researcher { name: author[0]}) 
+            MERGE (p)-[:AUTHOR]->(r)
             WITH row, p, SPLIT(row.author, '|') AS author
             UNWIND RANGE(1,SIZE(author)-1) as i
-            MERGE (p)-[:COAUTHOR]->(s:Scientist { name: author[i]}) 
+            MERGE (p)-[:COAUTHOR]->(r:Researcher { name: author[i]}) 
             """, file=file)
 
     @classmethod
@@ -81,9 +81,9 @@ class Neo4JLoader:
             MATCH (p:Paper { paperID: row.key, title: row.title, abstract: row.abstract})
             WITH row, p
             UNWIND SPLIT(row.reviewers, '|') AS reviewer
-            MATCH (s:Scientist { name: reviewer})
-            CREATE (p)<-[r:REVIEWS]-(s)
-            SET r.text=row.review, r.decision=row.decision
+            MATCH (r:Researcher { name: reviewer})
+            CREATE (p)<-[x:REVIEWS]-(r)
+            SET x.text=row.review, x.decision=row.decision
             """, file=file)
     
     @classmethod
@@ -91,12 +91,12 @@ class Neo4JLoader:
         return tx.run("""
             LOAD CSV WITH HEADERS FROM $file AS row
             FIELDTERMINATOR ';'
-            WITH row WHERE row.key IS NOT NULL AND row.title IS NOT NULL
+            WITH row WHERE row.key IS NOT NULL AND row.title IS NOT NULL AND row.organization IS NOT NULL
             MERGE (o:Organization { name:row.organization, type:row.type})
             WITH row, o
             UNWIND SPLIT(row.author, '|') AS author
-            MATCH (s:Scientist { name: author})
-            CREATE (s)-[:AFFILIATED]->(o)
+            MATCH (r:Researcher { name: author})
+            CREATE (r)-[:AFFILIATED]->(o)
             """, file=file)
 
     ### LOAD FUNCTIONS ###
@@ -112,10 +112,8 @@ class Neo4JLoader:
                 WITH row WHERE row.key IS NOT NULL AND row.title IS NOT NULL
                 MERGE (j:Journal { title: row.journal, year: row.year})
                 MERGE (p:Paper { paperID: row.key, title: row.title, abstract: row.abstract})
-                MERGE (y:Year { value: toString(row.year)})
                 MERGE (j)-[v:VOLUME]->(p)
                 SET v.vol=row.volume
-                MERGE (j)-[:PUBLISHED]-(y)
                 WITH row, p
                 UNWIND SPLIT(row.keywords, '|') AS keyword
                 MERGE (k:Keyword { topic: keyword})
@@ -151,7 +149,6 @@ class Neo4JLoader:
                 WITH row WHERE row.key IS NOT NULL AND row.title IS NOT NULL
                 MERGE (c:Conference { title: row.booktitle, year: row.year})
                 MERGE (p:Paper { paperID: row.key, title: row.title, abstract: row.abstract})
-                MERGE (y:Year { value: toString(row.year)})
                 MERGE (c)-[pr:PROCEEDING]->(p)
                 WITH row, p
                 UNWIND SPLIT(row.keywords, '|') AS keyword
@@ -184,9 +181,7 @@ class Neo4JLoader:
                 FIELDTERMINATOR ';'
                 WITH row WHERE row.booktitle IS NOT NULL
                 MERGE (c:Conference { title: row.booktitle, year:row.year})
-                MERGE (y:Year { year:row.year})
                 MERGE (ct:City { cityName:row.city, country:row.country})
-                MERGE (c)-[:CELEBRATED_YEAR]-(y)
                 MERGE (c)-[:CELEBRATED_CITY]-(ct)
                 WITH row, c
                 SET c.edition = row.edition
