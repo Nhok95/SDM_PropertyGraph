@@ -42,10 +42,9 @@ class Neo4JQueries:
             """).data()
 
         for i in result:
-        	print(i.get('Conf'), ':', i.get('top[..3]'), '\n')
+            print(i.get('Conf'), ':', i.get('top[..3]'), '\n')
 
-
-
+    
     def query2(self):
         with self.driver.session() as session:
             result = session.run("""
@@ -57,7 +56,7 @@ class Neo4JQueries:
    			""").data()
 
         for i in result:
-        	print(i.get('c.title'), ':', i.get('Community'), '\n')
+            print(i.get('c.title'), ':', i.get('Community'), '\n')
 
     def query3(self):
         with self.driver.session() as session:
@@ -70,7 +69,7 @@ class Neo4JQueries:
             """).data()
         
         for i in result:
-        	print(i.get('title'), ':', i.get('ImpactFactor'), '\n')
+            print(i.get('title'), ':', i.get('ImpactFactor'), '\n')
 
 
     def query4(self):
