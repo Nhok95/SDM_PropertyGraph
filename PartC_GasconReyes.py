@@ -63,6 +63,14 @@ class Neo4JAlgorithms:
                 
                 for x in result:
                     print(x)
+
+        with self.driver.session() as session_c:
+                result = session_c.run("""
+                        CALL gds.louvain.stats('myGraph')
+                        YIELD communityCount
+                        """).values()
+                
+                print(result)
             
 
     def nodeSimilarity(self, top=True):
@@ -119,4 +127,3 @@ if __name__ == "__main__":
     print(result)
 
     alg.close()
-
