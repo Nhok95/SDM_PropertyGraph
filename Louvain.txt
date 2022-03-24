@@ -1,0 +1,35 @@
+CALL gds.graph.create(
+    'myGraph',
+    'Paper',
+    {
+        CITES: {
+            orientation: 'NATURAL'
+        }
+    }
+)
+
+
+CALL gds.louvain.stream('myGraph',
+    {
+        maxLevels:1,
+        maxIterations:20,
+        tolerance:0.001,
+        includeIntermediateCommunities:TRUE
+    }
+)
+YIELD nodeId, communityId, intermediateCommunityIds
+RETURN gds.util.asNode(nodeId).title AS title, communityId, intermediateCommunityIds
+ORDER BY title ASC
+
+
+CALL gds.louvain.stats('myGraph',
+    {
+        maxLevels:10,
+        maxIterations:10,
+        tolerance:0.001,
+        includeIntermediateCommunities:TRUE
+    }
+)
+YIELD communityCount
+
+CALL gds.graph.drop('myGraph')
