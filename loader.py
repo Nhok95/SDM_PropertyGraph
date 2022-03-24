@@ -107,9 +107,8 @@ class Neo4JLoader:
             MATCH (p:Paper { paperID: row.key, title: row.title, abstract: row.abstract})
             WITH row, p
             UNWIND SPLIT(row.reviewers, '|') AS reviewer
-            MATCH (r:Researcher { name: reviewer})
-            CREATE (p)<-[x:REVIEWS]-(r)
-            SET x.text=row.review, x.decision=row.decision
+            MATCH (p)<-[rv:REVIEWS]-(r:Researcher { name: reviewer})
+            SET rv.text=row.review, rv.decision=row.decision
             """, file=file)
             
 
