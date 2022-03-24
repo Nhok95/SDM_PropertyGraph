@@ -68,9 +68,10 @@ class Neo4JLoader:
             WITH row, p, SPLIT(row.author, '|') AS author
             MERGE (r:Researcher { name: author[0]}) 
             MERGE (p)-[:AUTHOR]->(r)
-            WITH row, p, SPLIT(row.author, '|') AS author
+            WITH row, p, author
             UNWIND RANGE(1,SIZE(author)-1) as i
-            MERGE (p)-[:COAUTHOR]->(r:Researcher { name: author[i]}) 
+            MERGE (r2:Researcher {name: author[i]})
+            MERGE (p)-[:COAUTHOR]->(r2) 
             """, file=file)
 
     @classmethod
@@ -83,7 +84,6 @@ class Neo4JLoader:
             UNWIND SPLIT(row.reviewers, '|') AS reviewer
             MATCH (r:Researcher { name: reviewer})
             CREATE (p)<-[x:REVIEWS]-(r)
-            SET x.text=row.review, x.decision=row.decision
             """, file=file)
     
     @classmethod
@@ -99,7 +99,21 @@ class Neo4JLoader:
             CREATE (r)-[:AFFILIATED]->(o)
             """, file=file)
 
-    ### LOAD FUNCTIONS ###
+    @classmethod
+    def update_review_transaction(cls, tx, file):
+        return tx.run("""
+            LOAD CSV WITH HEADERS FROM $file AS row
+            FIELDTERMINATOR ';'
+            MATCH (p:Paper { paperID: row.key, title: row.title, abstract: row.abstract})
+            WITH row, p
+            UNWIND SPLIT(row.reviewers, '|') AS reviewer
+            MATCH (r:Researcher { name: reviewer})
+            CREATE (p)<-[x:REVIEWS]-(r)
+            SET x.text=row.review, x.decision=row.decision
+            """, file=file)
+            
+
+    ### LOAD FUNCTIONS FOR A2 ###
 
     ## Journals ##
     def load_journals_articles(self):
@@ -216,6 +230,28 @@ class Neo4JLoader:
 
     #############
 
+    ## Cites ##
+    def load_paper_citations(self):
+        print("##########################")
+        print("Inserting citations for papers...")
+        with self.driver.session() as session:
+            result = session.run("""
+                MATCH (p:Paper)
+                WITH p
+                MATCH (c:Paper) 
+                WHERE p <> c AND rand() < 0.05
+                MERGE (p)-[:CITES]->(c)
+            """)
+        
+            if self.printResult(result):
+                print("Citations for papers inserted")
+            else:
+                print("Error inserting citations")
+
+    #############
+
+    ### LOAD FUNCTIONS FOR A3 ###
+
     ## Organizations ##
     def load_organizations(self):
         print("##########################")
@@ -239,27 +275,28 @@ class Neo4JLoader:
 
     #############
 
-    ## Cites ##
-    def load_paper_citations(self):
+    ## Reviews ##
+    def update_article_reviews(self):
         print("##########################")
-        print("Inserting citations for papers...")
-        with self.driver.session() as session:
-            result = session.run("""
-                MATCH (p:Paper)
-                WITH p
-                MATCH (c:Paper) 
-                WHERE p <> c AND rand() < 0.05
-                CREATE (p)-[:CITES]->(c)
-            """)
-        
+        print("Inserting reviews...")
+        with self.driver.session() as session_a:
+            result = session_a.write_transaction(self.update_review_transaction, 'file:///journals_extracted.csv')
+
             if self.printResult(result):
-                print("Citations for papers inserted")
+                print("Article reviews updated (from Journals)")
             else:
-                print("Error inserting citations")
+                print("Error updating article reviews")
 
-    #############
+        with self.driver.session() as session_b:
+            result = session_b.write_transaction(self.update_review_transaction, 'file:///conferences_extracted.csv')
 
-    ## Clean BD ##
+            if self.printResult(result):
+                print("Article reviews updated (from Conferences)")
+            else:
+                print("Error updating article reviews")
+
+
+    ### Clean BD ###
     def clean_all(self):
         print("##########################")
         print("Cleaning database...")

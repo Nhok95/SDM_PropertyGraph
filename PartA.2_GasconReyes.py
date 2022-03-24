@@ -1,13 +1,13 @@
-# !pip install wheel
-# !pip install neo4j
 import argparse
 from loader import Neo4JLoader
 
-def GetParserArgs():
+
+def getParserArgs():
     parser = argparse.ArgumentParser()
     parser.add_argument("-m", "--mode", default='load',
                         help="Select mode", 
-                        type=str, choices=['load','clean'])
+                        type=str, 
+                        choices=['load','clean'])
     parser.add_argument("-u", "--user", default='neo4j',
                         help="username", 
                         type=str)
@@ -20,7 +20,7 @@ def GetParserArgs():
 
 
 if __name__ == "__main__":
-    args = GetParserArgs()
+    args = getParserArgs()
 
     if args.password == None:
         loader = Neo4JLoader("bolt://localhost:7687")
@@ -29,6 +29,7 @@ if __name__ == "__main__":
 
     if args.mode == 'load':
         print('Start bulk Loading...')
+
         ## Journals ##
         loader.load_journals_articles()
         loader.load_journals_authors_articles()
@@ -40,13 +41,9 @@ if __name__ == "__main__":
 
         ## Reviews ##
         loader.load_article_reviews()
-        
-        ## Organizations ##
-        loader.load_organizations()
 
         ## Cites ##
         loader.load_paper_citations()
-        
 
     elif args.mode == 'clean':
         print('Cleaning graph...')

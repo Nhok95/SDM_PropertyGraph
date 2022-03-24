@@ -18,7 +18,7 @@ except FileExistsError as error:
     print("directory '{}' already exists".format(pathOut))
 
 def random_keywords():
-	keywords=['Data Structures', 'Machine Learning', 'Big Data', 'Semantic Data', 
+	keywords=['Data Management', 'Machine Learning', 'Big Data', 'Semantic Data', 
 	'Relational Databases', 'NLP', 'Data Mining', 'Data Engineering', 'High Performance Computing',
 	'Computer Networks', 'Data Storage', 'Data Management']
 
