@@ -33,10 +33,10 @@ Query 2
  at least, 4 different editions.]
 (comprobada con un caso de que las ediciones fueran 2 en vez de 4 ya que no hay este ultimo caso, usar utilities para mejor visualización)
 -------
-MATCH (c:Conference)-->(p:Paper)-[:AUTHOR]->(s:Scientist) 
-WITH c, s, count(c) AS Editions
+MATCH (c:Conference)-->(p:Paper)-[:AUTHOR]->(r:Researcher) 
+WITH c, r, count(c) AS Editions
 WHERE Editions >= 4
-RETURN c.title, collect(s.name) AS Community
+RETURN c.title, collect(r.name) AS Community
 
 RESULT:
 ╒═════════════╤═════════════════════════════════════════════════════════════════╕
@@ -57,10 +57,11 @@ RESULT:
 Query 3
 [Find the impact factors of the journals in your graph]
 --------
-MATCH (j:Journal)-->(p:Paper)<--(c:Paper)
-WITH j, p, count(c) AS Citations
-WHERE toInteger(j.year) IN [date().year-1,date().year-2]
-RETURN j.title, SUM(Citations)/count(p) AS IF
+MATCH (j:Journal)-->(p:Paper)<-[:CITES]-(p2:Paper)
+WITH j.title as title, j.year as year, p, p2
+WHERE toInteger(year) IN [date().year-1,date().year-2]
+WITH title, year, count(p) as Publications, count(p2) as Citations
+RETURN title, sum(Citations)/sum(Publications) as ImpactFactor
 
 MATCH (j:Journal)-->(p:Paper)<-[:CITES]-(p2:Paper)
 WITH j.title as title, j.year as year, p, p2
@@ -72,8 +73,8 @@ RETURN title, sum(citations)/sum(publications) as ImpactFactor
 Query 4
 [Find the h-indexes of the authors in your graph]
 --------
-MATCH (s:Scientist)<-[:AUTHOR]-(p:Paper)<--(c:Paper)
-WITH s.name AS Author, p, count(c.title) AS PCitations
+MATCH (r:Researcher)<-[:AUTHOR]-(p:Paper)<--(c:Paper)
+WITH r.name AS Author, p, count(c.title) AS PCitations
 ORDER BY Author, PCitations DESC
 WITH Author, collect(PCitations) AS Citations
 UNWIND range(0, size(Citations)-1) AS it
@@ -121,21 +122,21 @@ Query 1
 Query 2
  * Saca el numero de ediciones de conferencias en las que un autor tiene paper
 
-   MATCH (c:Conference)-->(p:Paper)-[:AUTHOR]->(s:Scientist) 
-   WITH c, s, count(c) AS Editions
+   MATCH (c:Conference)-->(p:Paper)-[:AUTHOR]->(r:Researcher) 
+   WITH c, r, count(c) AS Editions
    ORDER BY Editions DESC
-   RETURN c.title,c s.name, Editions 
+   RETURN c.title,c r.name, Editions 
 
    Example:
-   MATCH (c:Conference {title:"WAPA"})-->(p:Paper)-[:AUTHOR]->(s:Scientist) 
-   WITH c, s, count(c) AS Editions
+   MATCH (c:Conference {title:"WAPA"})-->(p:Paper)-[:AUTHOR]->(r:Researcher) 
+   WITH c, r, count(c) AS Editions
    WHERE Editions > 1
-   RETURN c.title, s.name, Editions
+   RETURN c.title, r.name, Editions
    ORDER BY Editions DESC
    
    Result:
   ╒═════════╤═══════════════════╤══════════╕
-  │"c.title"│"s.name"           │"Editions"│
+  │"c.title"│"r.name"           │"Editions"│
   ╞═════════╪═══════════════════╪══════════╡
   │"WAPA"   │"Albert Bifet"     │4         │
   ├─────────┼───────────────────┼──────────┤
